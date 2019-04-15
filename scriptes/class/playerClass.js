@@ -1,4 +1,4 @@
-export default class PlayerClass{
+export default class Player{
 
     constructor(image) {
 
