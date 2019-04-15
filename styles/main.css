@@ -95,11 +95,12 @@ h3{
   font-family: "Morris Roman";
 }
 
-#triangleDown:hover{
+.triangle:hover{
   border-top: 30px solid grey;
 }
 
-#triangleDown{
+
+.triangle{
   width: 0px;
   margin: 0 auto;
   border-left: 20px solid transparent;
