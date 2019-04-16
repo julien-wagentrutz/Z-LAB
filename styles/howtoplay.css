@@ -1,0 +1,176 @@
+body{
+  margin:0;
+  padding:0;
+  font-size: 16px;
+  color : white;
+  background-color: black;
+}
+
+/* HEADER */
+
+.logo{
+  display: flex;
+  justify-content: center;
+}
+
+#logo{
+  width: 600px;
+  height: 200px;
+  margin : 30px;
+}
+
+/* HAMBURGER */
+
+#hamburger{
+  opacity : 1;
+  left : 30px;
+  top : 30px;
+  width : 50px;
+  height: 50px;
+  position : fixed;
+}
+#blackHamburger{
+  opacity : 0;
+  transition : all 2.5s;
+  left : 30px;
+  top : 30px;
+  width : 50px;
+  height: 50px;
+  position : absolute;
+}
+
+.containerHamburger{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.menuHamburger{
+  display : block;
+  right :100%;
+  transition: all 1s;
+  top : 0px;
+  position: fixed;
+  width : 200px;
+  height: 700px;
+  background: linear-gradient(#6b6969, #bebdbd);
+}
+
+.menuHamburgerOnglets{
+  padding-top : 140px;
+}
+
+.menuHamburgerOnglets ul li{
+  list-style: none;
+  padding: 20px 0px;
+}
+
+.menuHamburgerOnglets ul li a{
+  color : black;
+  text-decoration: none;
+  font-family: "Morris Roman";
+  font-size: 24px;
+}
+
+/*MAIN*/
+
+.howToPlay h1{
+  font-family: "ARMY RUST";
+  font-size : 60px;
+  text-align: center;
+  width : 100%;
+  height : 80px;
+  background-color: red;
+  border : 2px solid white;
+}
+
+.howToPlay h3{
+  font-family: "Morris Roman";
+  font-size : 34px;
+  text-align: center;
+}
+
+#gameGoal{
+  font-family: "Morris Roman";
+  font-size : 28px;
+  text-align: center;
+  margin : 0px 20%;
+  margin-bottom : 80px;
+}
+
+.how{
+  display: flex;
+  justify-content: space-around;
+  margin : 50px 20%;
+  border : 1px solid white;
+  padding : 20px;
+}
+
+.how p{
+  font-family: "Morris Roman";
+  font-size : 22px;
+  text-align: center;
+}
+
+
+
+.howToPlay img{
+  width : 300px;
+  height: 300px;
+}
+
+
+
+.divButton{
+  display: flex;
+  justify-content: center;
+}
+
+#button{
+  margin : 30px 0px;
+  width : 250px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50px;
+  position : fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#button a{
+  color : white;
+  text-decoration: none;
+  font-size: 50px;
+  font-family: "army rust";
+}
+
+
+
+@media screen and (max-width : 990px){
+  .how{
+    flex-direction: column;
+  }
+
+  .how img{
+    margin : 20px auto;
+  }
+}
+
+@media screen and (max-width : 600px){
+  .how{
+    flex-direction: column;
+  }
+  .how img{
+    width : 200px;
+    height: 200px;
+  }
+  .howToPlay h1{
+    font-size : 45px;
+  }
+  #logo{
+    width: 510px;
+    height: 170px;
+    margin : 30px;
+  }
+}

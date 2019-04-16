@@ -7,6 +7,11 @@ const hamburger = document.querySelector("#hamburger")
 const blackHamburger = document.querySelector("#blackHamburger")
 const menuHamburger = document.querySelector(".menuHamburger")
 const logo = document.querySelector("logo")
+const slider = document.querySelector(".slider")
+const sliderContainer = document.querySelector(".sliderContainer")
+const sliderImg = document.querySelectorAll(".sliderImg")
+
+
 
 // PARAGRAPHE PRESENTATION
 
@@ -24,6 +29,7 @@ const logo = document.querySelector("logo")
 button.addEventListener(
   "click",
   function(){
+    slider.style.opacity="1"
     hamburger.style.opacity="1"
     hamburger.style.transition="all 2s"
     firstMenu.style.opacity="0"
@@ -61,36 +67,37 @@ blackHamburger.addEventListener(
   }
 )
 
+// SLIDER
 
+  let nbImage = 0
 
+  for(let i = 0; i<sliderImg.length; i++){
+    sliderImg[i].addEventListener(
+      "click",
+      function(){
+        if(nbImage==0){
+        sliderImg[0].classList.remove("currentImg")
+        sliderImg[1].classList.add("currentImg")
+        sliderContainer.style.transform="translateX(-30%)"
+        }
+        if(nbImage==1){
+          sliderImg[1].classList.remove("currentImg")
+          sliderImg[2].classList.add("currentImg")
+          sliderContainer.style.transform="translateX(-60%)"
 
+           }
+        if(nbImage==2){
+          sliderImg[2].classList.remove("currentImg")
+          sliderImg[0].classList.add("currentImg")
+          sliderContainer.style.transform="translateX(0px)"
 
-
-
-/*
-let nbImage=0
-
-if(nbImage<=2){
-  rightArrow.addEventListener(
-    "click",
-    function(){
-      console.log(nbImage)
-      sliderImg[nbImage].classList.remove("currentSlide")
-      sliderImg[nbImage+1].classList.add("currentSlide")
-      nbImage++
-    }
-  )
-}
-
-if(nbImage==2){
-  rightArrow.addEventListener(
-    "click",
-    function(){
-      window.alert("wsh")
-  sliderImg[2].classList.remove("currentSlide")
-  sliderImg[0].classList.add("currentSlide")
-  nbImage=0
-    }
-  )
-}
-*/
+        }
+        if(nbImage<2){
+          nbImage++
+        }
+        else if(nbImage==2){
+          nbImage=0
+        }
+      }
+    )
+  }

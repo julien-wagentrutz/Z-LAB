@@ -2,9 +2,8 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8"/>
-    <title> Titre de ma page </title>
+    <title>Z-LAB</title>
     <meta name="description" content="description de la page"/>
-    <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
@@ -13,20 +12,26 @@
     </div>
     <div class="logo">
       <img src="images/hamburger.png" id="hamburger" alt="hamburger">
-      <img src="images/logo.png"  id="logo" alt="logo">
+      <a href="index.html" title="index">
+        <img src="images/logo.png"  id="logo" alt="logo">
+      </a>
       <div class="menuHamburger">
         <img src="images/blackhamburger.png" id="blackHamburger" alt="blackhamburger">
         <div class="menuHamburgerOnglets">
           <ul>
+            <li><a href="index.html" title="presentation">Présentation</a></li>
             <li><a href="#" title="jeu">Jouer</a></li>
-            <li><a href="#" title="jeu">Comment jouer ?</a></li>
+            <li><a href="pages/howtoplay.html" title="comment jouer">Comment jouer ?</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="slider">
+      <img src="images/murPixel.png" alt="mur" id="murPixel">
       <div class="sliderContainer">
-        <img src="images/screen1.png" alt="Items 1">
+        <img src="images/screen1.png" class ="sliderImg currentImg" alt="Items 1">
+        <img src="images/screen2.png" class ="sliderImg" alt="Items 2">
+        <img src="images/screen3.png" class ="sliderImg" alt="Items 3">
         <a href="#" title="left" class="left"><</a>
         <a href="#" title="right" class="right">></a>
       </div>

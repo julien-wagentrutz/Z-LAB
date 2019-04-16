@@ -6,6 +6,8 @@ body{
   background-color: black;
 }
 
+/* HEADER*/
+
 h1{
   font-family: "ARMY RUST";
   font-size: 60px;
@@ -21,13 +23,13 @@ h1{
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .firstMenu h2{
   font-family: "ARMY RUST";
   font-size: 60px;
   color : white;
+  margin : 0 auto;
 }
 
 .logo{
@@ -40,6 +42,8 @@ h1{
   height: 200px;
   margin : 30px;
 }
+
+/* HAMBURGER */
 
 #hamburger{
   opacity : 0;
@@ -59,9 +63,16 @@ h1{
   position : absolute;
 }
 
+.containerHamburger{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .menuHamburger{
+  z-index: 3;
   display : block;
-  right :1440px;
+  right :100%;
   transition: all 1s;
   top : 0px;
   position: fixed;
@@ -86,16 +97,47 @@ h1{
   font-size: 24px;
 }
 
+/* SLIDER */
 
-.sliderContainer{
+.slider{
+  z-index : 1;
+  opacity: 0;
+  position: relative;
   display: flex;
   justify-content: center;
+  transition: all 2s;
+}
+
+#murPixel{
+  width : 100%;
+  height: 250px;
+  transition: all 2s;
+}
+
+.sliderContainer{
+  width: 100%;
+  left : 30%;
+  position: absolute;
+  top : 16px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+  transition: all 1s;
 }
 
 .sliderContainer img{
-  width : 450px;
+  width : 30%;
+  height: 200px;
+  opacity : .7;
+}
+
+.sliderContainer .currentImg{
+  opacity: 1;
+  width : 40%;
   height: 200px;
 }
+
+/* MAIN */
 
 .divButton{
   display: flex;
@@ -123,7 +165,7 @@ h1{
 
 .teaser{
   display: none;
-  width: 822px;
+  width: 100%;
   padding-bottom : 400px;
   margin: 0 auto;
 }
@@ -138,8 +180,8 @@ h3{
 }
 
 #textTeaser{
-  width: 800px;
-  margin: 0 auto;
+  width: 60%;
+  margin: 0 20%;
   font-size: 30px;
   font-family: "Morris Roman";
 }
@@ -155,4 +197,35 @@ h3{
   border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
 	border-top: 30px solid white;
+}
+
+
+@media screen and (max-width : 990px){
+  .firstMenu h2{
+    font-size: 50px;
+    color : white;
+    margin : 0 auto;
+  }
+
+}
+
+@media screen and (max-width : 826px){
+  .firstMenu h2{
+    font-size: 40px;
+    color : white;
+    margin : 0 auto;
+  }
+}
+
+@media screen and (max-width : 662px){
+  .firstMenu h2{
+    font-size: 25px;
+    color : white;
+    margin : 0 auto;
+  }
+  #logo{
+    width: 510px;
+    height: 170px;
+    margin : 30px;
+  }
 }
