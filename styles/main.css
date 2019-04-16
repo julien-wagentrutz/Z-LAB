@@ -1,0 +1,93 @@
+body{
+  margin:0;
+  padding:0;
+  font-size: 16px;
+  color : white;
+  background-color: black;
+}
+
+h1{
+  font-family: "ARMY RUST";
+  font-size: 12em;
+  color : white;
+  width: 500px;
+  margin : 0 auto;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+}
+
+.logo img{
+  width: 600px;
+  height: 200px;
+}
+
+.image{
+  display: flex;
+  justify-content: center;
+  height: 320px;
+}
+
+.divButton{
+  display: flex;
+  justify-content: center;
+}
+
+#button{
+  width : 250px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50px;
+  position : fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#button a{
+  color : white;
+  text-decoration: none;
+  font-size: 40px;
+}
+
+.teaser{
+  width: 822px;
+  padding-bottom : 4000px;
+  margin: 0 auto;
+}
+
+h3{
+  padding: 50px 0px;
+  width: 200px;
+  margin: 0 auto;
+  font-size: 45px;
+  letter-spacing: 3px;
+  font-family: "Cup and Talon"
+}
+
+#textTeaser, #textHidden{
+  width: 800px;
+  margin: 0 auto;
+  font-size: 30px;
+  font-family: "Morris Roman";
+  padding-bottom: 20px;
+  opacity: 1;
+}
+
+#textHidden{
+  display : none;
+}
+
+#triangleDown:hover{
+  border-top: 30px solid grey;
+}
+
+#triangleDown{
+  width: 0px;
+  margin: 0 auto;
+  border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 30px solid white;
+}
