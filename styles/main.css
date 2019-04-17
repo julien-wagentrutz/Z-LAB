@@ -6,7 +6,9 @@ body{
   background-color: black;
 }
 
-
+audio{
+  display: block;
+}
 /* HEADER*/
 
 .firstMenu{

@@ -10,6 +10,7 @@ const logo = document.querySelector("logo")
 const slider = document.querySelector(".slider")
 const sliderContainer = document.querySelector(".sliderContainer")
 const sliderImg = document.querySelectorAll(".sliderImg")
+const musiqueAccueil = document.querySelector("#musiqueAccueil")
 
 
 // PARAGRAPHE PRESENTATION
@@ -25,7 +26,7 @@ const sliderImg = document.querySelectorAll(".sliderImg")
 
 // OUVERTURE DEBUT
 
-button.addEventListener(
+button.addEventListener( //BOUTON DE LA PREMIERE PAGE
   "click",
   function(){
     slider.style.opacity="1"
@@ -33,6 +34,7 @@ button.addEventListener(
     hamburger.style.transition="all 1s"
     firstMenu.style.opacity="0"
     firstMenu.style.transition="all 1s"
+    musiqueAccueil.play()
 
     button.style.width="210px"
     button.style.height="70px"
@@ -72,7 +74,7 @@ blackHamburger.addEventListener(
 
 // SLIDER
 
-  let nbImage = 0
+  let nbImage = 0 //Pour savoir à quelle image on est
 
   for(let i = 0; i<sliderImg.length; i++){
     sliderImg[i].addEventListener(
@@ -92,7 +94,7 @@ blackHamburger.addEventListener(
         if(nbImage==2){
           sliderImg[2].classList.remove("currentImg")
           sliderImg[0].classList.add("currentImg")
-          sliderContainer.style.transform="translateX(0px)"
+          sliderContainer.style.transform="translateX(0px)"//fait repartie le slider à 0
 
         }
         if(nbImage<2){
