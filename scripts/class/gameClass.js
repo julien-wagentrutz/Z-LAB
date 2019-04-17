@@ -15,6 +15,13 @@ class Game{
         this.sword = false;
         this.bombe = false;
         this.keys = false;
+
+        document.addEventListener('keydown', (event) => {
+            if (this.finish) {
+                const key = event.key;
+                this.player.move(key)
+            }
+        })
     }
 
     // play the lv
@@ -29,18 +36,10 @@ class Game{
         this.drawGrid(maze[this.lv]);
         delete this.player;
         this.player = new Player(this);
-        console.log(this.player)
         this.player.draw();
-        document.removeEventListener('keydown',function () {})
         //this.zombies.push(new Zombie(this,this.size * (maze[this.lv].length-2),this.size));
         //this.zombies.push(new Zombie(this,this.size * (maze[this.lv].length-2),this.size * (maze[this.lv].length-2)));
         //this.zombies.push(new Zombie(this,this.size,this.size * (maze[this.lv].length-3)));
-            document.addEventListener('keydown', (event) => {
-                if (this.finish) {
-                    const key = event.key;
-                    this.player.move(key)
-                }
-            })
 
        /*this.int = setInterval(function () {
             tpmpPlayer.move(tpmpPlayer.dir)
