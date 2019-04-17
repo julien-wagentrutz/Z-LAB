@@ -13,19 +13,19 @@ class Block {
             this.image.src = 'images/sprites/images_level_'+lv+'/sword'+lv+'.png' //sword
         }
         else if (hit == 3){
-            this.image.src = 'images/sprites/ball.png' // Bombe Objet
+            this.image.src = 'images/sprites/images_level_'+lv+'/bomb'+lv+'.png' // Bombe Objet
         }
         else if (hit == 4){
-            this.image.src = 'images/sprites/ball.png' // key
+            this.image.src = 'images/sprites/images_level_'+lv+'/key'+lv+'.png' // key
         }
         else if (hit == 5){
-            this.image.src = 'images/sprites/concrete-block.jpg' //Door
+            this.image.src = 'images/sprites/images_level_'+lv+'/door'+lv+'.png' //Door
         }
         else if (hit == 6){
             this.image.src = 'images/sprites/blockRoad.jpg' // block fragile
         }
         else if(hit == 7){
-            this.image.src = 'images/sprites/ball.png' // Bombe
+            this.image.src = 'images/sprites/images_level_'+lv+'/bomb'+lv+'.png' // Bombe
         }
         else{
             this.image.src = 'images/sprites/images_level_'+lv+'/wall'+lv+'.png' // wall

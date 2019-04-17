@@ -9,7 +9,7 @@ class Zombie{
     constructor(game,posX,posY) {
         this.game = game;
         this.image = new Image();
-        this.image.src = 'images/sprites/playerFront0.png';
+        this.image.src = 'images/sprites/images_level_'+this.game.lv+'/zombie'+this.game.lv+'-down.png'
         this.posX = posX ;
         this.posY = posY;
         this.dir = 'ArrowLeft';
@@ -38,19 +38,19 @@ class Zombie{
 
         if(newDir == 'ArrowLeft'){
             newPosX -= this.game.size
-            newImage = 'images/sprites/playerLeft0.png';
+            newImage = 'images/sprites/images_level_'+this.game.lv+'/zombie'+this.game.lv+'-left.png';
         }
         else if(newDir == 'ArrowRight') {
             newPosX += this.game.size
-            newImage = 'images/sprites/playerRight0.png';
+            newImage = 'images/sprites/images_level_'+this.game.lv+'/zombie'+this.game.lv+'-right.png';
         }
         else if(newDir == 'ArrowUp'){
             newPosY -= this.game.size
-            newImage = 'images/sprites/playerBack0.png';
-        }
+            newImage = 'images/sprites/images_level_'+this.game.lv+'/zombie'+this.game.lv+'-up.png';
+                                                                                                                     }
         else if(newDir == 'ArrowDown'){
             newPosY += this.game.size
-            newImage = 'images/sprites/playerFront0.png';
+            newImage = 'images/sprites/images_level_'+this.game.lv+'/zombie'+this.game.lv+'-down.png';
         }
 
         if(maze[this.game.lv][newPosY/this.game.size][newPosX/this.game.size] == 0) {

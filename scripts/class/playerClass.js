@@ -41,8 +41,7 @@ class Player {
         let newImage = this.image.src;
         let newPosX = this.posX
         let newPosY = this.posY
-
-
+        
         if(dir == 'ArrowLeft'){
             newPosX -= this.game.size
             newDir = dir;
@@ -277,9 +276,7 @@ class Player {
 
 
 function arrayRemove(arr, value) {
-
     return arr.filter(function(ele){
         return ele != value;
     });
-
 }

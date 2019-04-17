@@ -15,30 +15,30 @@ class Game{
         this.sword = false;
         this.bombe = false;
         this.keys = false;
-
-        this.texture = {'floor' : new Image()}
-        this.texture['floor'].src = 'images/sprites/images_level_'+this.lv+'/floor'+this.lv+'.png';
-        this.texture['floor'].addEventListener('load',function () {
-
-        })
     }
 
     // play the lv
     play(){
         this.size =600/maze[this.lv].length;
-        this.finish = true
-        this.mode = 0
-        this.drawGrid(maze[this.lv])
-        this.player = new Player(this)
-        let tpmpPlayer = this.player
-        tpmpPlayer.draw()
+        this.finish = true;
+        this.sword = false;
+        this.bombe = false;
+        this.keys = false;
+        this.mode = 0;
+        this.items = 0
+        this.drawGrid(maze[this.lv]);
+        delete this.player;
+        this.player = new Player(this);
+        console.log(this.player)
+        this.player.draw();
+        document.removeEventListener('keydown',function () {})
         //this.zombies.push(new Zombie(this,this.size * (maze[this.lv].length-2),this.size));
         //this.zombies.push(new Zombie(this,this.size * (maze[this.lv].length-2),this.size * (maze[this.lv].length-2)));
         //this.zombies.push(new Zombie(this,this.size,this.size * (maze[this.lv].length-3)));
             document.addEventListener('keydown', (event) => {
                 if (this.finish) {
                     const key = event.key;
-                    tpmpPlayer.move(key)
+                    this.player.move(key)
                 }
             })
 
@@ -140,10 +140,10 @@ class Game{
     }
 
     finishGame(){
-       this.finish = false;
+        this.finish = false;
         this.ctx.clearRect(0,0,600,600)
         clearInterval(this.int)
-        this.lv++;
+        this.lv++; // tester si encore lv sup
         this.play()
     }
 
