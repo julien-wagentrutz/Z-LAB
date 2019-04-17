@@ -169,13 +169,14 @@ audio{
 .teaser{
   display: none;
   width: 100%;
-  padding-bottom : 400px;
+  padding-bottom : 20px;
   margin: 0 auto;
 }
 
 h3{
   width : 140px;
   padding-top : 50px;
+  padding-bottom: 30px;
   width: 200px;
   margin: 0 auto;
   font-size: 55px;
@@ -188,20 +189,24 @@ h3{
   margin: 0px 20%;
   font-size: 25px;
   text-justify : inter-word;
-  font-family: 'Raleway', sans-serif;
-}
-
-.triangle:hover{
-  border-top: 30px solid grey;
+  font-family: "Morris Roman";
 }
 
 
-.triangle{
-  width: 0px;
-  margin: 0 auto;
-  border-left: 20px solid transparent;
-	border-right: 20px solid transparent;
-	border-top: 30px solid white;
+.divHowToPlay{
+  display: flex;
+  justify-content: center;
+  padding-top : 40px;
+  padding-bottom: 200px;
+}
+
+#howToPlay{
+  font-size: 28px;
+  color : white
+}
+
+#howToPlay:hover{
+  color : grey;
 }
 
 

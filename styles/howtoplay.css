@@ -100,13 +100,15 @@ body{
 
 .how{
   display: flex;
-  justify-content: space-around;
+  flex-direction: center;
+  justify-content: center;
   margin : 50px 20%;
   border : 1px solid white;
   padding : 20px;
 }
 
 .how p{
+  display : none;
   font-family: "Morris Roman";
   font-size : 22px;
   text-align: center;
@@ -115,6 +117,7 @@ body{
 
 
 .howToPlay img{
+  display : none;
   width : 300px;
   height: 300px;
 }
@@ -122,6 +125,7 @@ body{
 
 
 .divButton{
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -132,7 +136,7 @@ body{
   height: 100px;
   background-color: red;
   border-radius: 50px;
-  position : fixed;
+  position : static;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,6 +147,32 @@ body{
   text-decoration: none;
   font-size: 50px;
   font-family: "army rust";
+}
+
+.triangle{
+  width: 0px;
+  margin: 0 auto;
+  border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 30px solid white;
+}
+
+.triangle:hover{
+  border-top: 30px solid grey;
+}
+
+.triangleUp{
+  width: 0px;
+  margin: 0 auto;
+  border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 30px solid white;
+  border-top: 0px;
+}
+
+.triangleUp:hover{
+  border-bottom: 30px solid grey;
+  border-top: 0px;
 }
 
 
