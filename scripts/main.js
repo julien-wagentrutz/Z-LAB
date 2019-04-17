@@ -12,13 +12,12 @@ const sliderContainer = document.querySelector(".sliderContainer")
 const sliderImg = document.querySelectorAll(".sliderImg")
 
 
-
 // PARAGRAPHE PRESENTATION
 
   triangle.addEventListener(
     "click",
     function(){
-      textTeaser.innerHTML="<p>Vous êtes un aventurier et vous devez tenter de survivre aux zombies dans un labyrinthe complexe. Pour cela, récupérez votre équipement, caché dans les différents recoins que vous devrez explorer. Dès le début de la partie, vous devez parcourir le labyrinthe afin de retrouver votre équipement. Mais ne trainez pas trop, un zombie affamé vous poursuit !<br> Lorsque vous avez retrouvé votre armure complète et votre arme, vous pourrez enfin vous enfuir. Mais il se peut qu'à ce moment la lumière s'éteigne, j'espère que vous n'avez pas peur du noir...<br><br>Jeu réalisé par l'equipe 18 composée de Julien Wagentrutz, Canan Yesilaltay, Nina Moilier, Axel Viskovic, et Nicolas Frappa.</p> "
+      textTeaser.innerHTML="<p>Vous êtes un aventurier et vous devez tenter de survivre aux zombies dans un labyrinthe complexe. Pour cela, récupérez votre équipement, caché dans les différents recoins que vous devrez explorer. Dès le début de la partie, vous devez parcourir le labyrinthe afin de retrouver votre équipement. Mais ne trainez pas trop, un zombie affamé vous poursuit !<br> Lorsque vous avez retrouvé votre armure complète et votre arme, vous pourrez enfin vous enfuir. Mais il se peut qu'à ce moment la lumière s'éteigne, j'espère que vous n'avez pas peur du noir...<br><br>Jeu réalisé par l'equipe 18 composée de Julien Wagentrutz, Canan Yesilaltay, Nina Moilier, et Axel Viskovic.</p> "
       triangle.style.display = "none"
 
     }
@@ -31,16 +30,16 @@ button.addEventListener(
   function(){
     slider.style.opacity="1"
     hamburger.style.opacity="1"
-    hamburger.style.transition="all 2s"
+    hamburger.style.transition="all 1s"
     firstMenu.style.opacity="0"
-    firstMenu.style.transition="all 2s"
+    firstMenu.style.transition="all 1s"
 
     button.style.width="210px"
     button.style.height="70px"
-    button.style.transition="all 2s"
+    button.style.transition="all 1s"
 
     buttonText.style.fontSize="40px"
-    buttonText.style.transition="all 2s"
+    buttonText.style.transition="all 1s"
 
     buttonText.innerText="Jouer"
 
