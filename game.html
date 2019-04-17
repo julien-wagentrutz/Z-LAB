@@ -6,33 +6,70 @@
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
-        <img src="images/sprites/images_level_0/floor0.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/wall0.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/floor1.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/wall1.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/figure0-down.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/figure1-down.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/sword0.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/sword1.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/bomb0.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/bomb1.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/door0.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/door1.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/key0.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/key1.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/brokenWall0.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/brokenWall1.png" hidden="hidden">
+      <img src="images/hamburger.png" id="hamburger" alt="hamburger">
+      <div class="logo">
+        <a href="index.html" title="index">
+          <img src="images/logo.png"  id="logo" alt="logo">
+        </a>
+      </div>
+      <div class="containerGame">
+        <div class="levelLife">
+          <div class="level">
+            <h2>Niveau</h2>
+          </div>
+          <div class="life">
+            <h2>Vie</h2>
+          </div>
+        </div>
+        <div id="divGame">
+          <img src="images/sprites/images_level_0/floor0.png" hidden="hidden">
+          <img src="images/sprites/images_level_0/wall0.png" hidden="hidden">
+          <img src="images/sprites/images_level_1/floor1.png" hidden="hidden">
+          <img src="images/sprites/images_level_1/wall1.png" hidden="hidden">
+          <img src="images/sprites/images_level_0/figure0-down.png" hidden="hidden">
+          <img src="images/sprites/images_level_1/figure1-down.png" hidden="hidden">
+          <img src="images/sprites/images_level_0/sword0.png" hidden="hidden">
+          <img src="images/sprites/images_level_1/sword1.png" hidden="hidden">
+          <img src="images/sprites/images_level_0/bomb0.png" hidden="hidden">
+          <img src="images/sprites/images_level_1/bomb1.png" hidden="hidden">
+          <img src="images/sprites/images_level_0/door0.png" hidden="hidden">
+          <img src="images/sprites/images_level_1/door1.png" hidden="hidden">
+          <img src="images/sprites/images_level_0/key0.png" hidden="hidden">
+          <img src="images/sprites/images_level_1/key1.png" hidden="hidden">
+          <img src="images/sprites/images_level_0/brokenWall0.png" hidden="hidden">
+          <img src="images/sprites/images_level_1/brokenWall1.png" hidden="hidden">
 
-        <img src="images/sprites/ball.png" hidden="hidden">
+          <img src="images/sprites/ball.png" hidden="hidden">
 
-        <img src="images/sprites/concrete-block.jpg" hidden="hidden">
-        <img src="images/sprites/blockRoad.jpg" hidden="hidden">
-        <canvas id="game" width="600" height="600"></canvas>
-        <script type="text/javascript" src="mazes/mazes.js"></script>
-        <script type="text/javascript" src="scripts/class/blockClass.js"></script>
-        <script type="text/javascript" src="scripts/class/playerClass.js"></script>
-        <script type="text/javascript" src="scripts/class/zombieClass.js"></script>
-        <script type="text/javascript" src="scripts/class/gameClass.js"></script>
-        <script type="text/javascript" src="scripts/game.js"></script>
+          <img src="images/sprites/concrete-block.jpg" hidden="hidden">
+          <img src="images/sprites/blockRoad.jpg" hidden="hidden">
+          <canvas id="game" width="600" height="600"></canvas>
+          <script type="text/javascript" src="mazes/mazes.js"></script>
+          <script type="text/javascript" src="scripts/class/blockClass.js"></script>
+          <script type="text/javascript" src="scripts/class/playerClass.js"></script>
+          <script type="text/javascript" src="scripts/class/zombieClass.js"></script>
+          <script type="text/javascript" src="scripts/class/gameClass.js"></script>
+          <script type="text/javascript" src="scripts/game.js"></script>
+        </div>
+        <div class="stuffPlayer">
+          <h2>ÉQUIPEMENT</h2>
+          <div class="stuffPlayerShow">
+            <div id="stuffSword">
+              <img src="images/swordWhite.png" alt="bomb transparent">
+
+            </div>
+            <div id="stuffBomb">
+              <img src="images/bombWhite.png" alt="bomb transparent">
+            </div>
+            <div id="stuffKey">
+              <img src="images/keyWhite.png" alt="bomb transparent">
+
+            </div>
+          </div>
+          <div class="divButton">
+            <button id="buttonReturn"><a href="index.html">Retour</a></button>
+          </div>
+        </div>
+      </div>
     </body>
 </html>

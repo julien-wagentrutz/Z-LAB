@@ -42,10 +42,14 @@ button.addEventListener(
     buttonText.style.transition="all 1s"
 
     buttonText.innerText="Jouer"
+    //buttonText.setAttribute('href','game.html')
 
     teaser.style.display="block"
   }
 )
+
+
+
 
 
 // HAMBURGER
