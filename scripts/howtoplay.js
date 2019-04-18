@@ -6,6 +6,7 @@ const howP = document.querySelectorAll(".how p")
 const howImg = document.querySelectorAll(".howToPlay img")
 const howPContainer = document.querySelectorAll(".howPContainer")
 const howImgContainer = document.querySelectorAll(".howImgContainer")
+
 // HAMBURGER
 
 hamburger.addEventListener(

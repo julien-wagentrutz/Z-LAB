@@ -8,12 +8,12 @@ body{
 
 @font-face {
 	font-family: "Morris Roman";
-	src: url('morris-roman.black.ttf');
+	src: url('fonts/morris-roman.black.ttf');
 }
 
 @font-face {
 	font-family: "Army Rust";
-	src: url('ARMY RUST 2.ttf');
+	src: url('fonts/ARMY RUST 2.ttf');
 }
 
 /* HEADER */
@@ -90,7 +90,7 @@ body{
 /*MAIN*/
 
 .howToPlay h1{
-  font-family: "ARMY RUST";
+  font-family: "Army Rust";
   font-size : 60px;
   text-align: center;
   width : 100%;
@@ -169,7 +169,7 @@ body{
   color : white;
   text-decoration: none;
   font-size: 50px;
-  font-family: "army rust";
+  font-family: "Army rust";
 }
 
 .triangle{
