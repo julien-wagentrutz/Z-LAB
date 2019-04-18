@@ -4,29 +4,35 @@
     <meta charset="utf-8"/>
     <title>Z-LAB</title>
     <meta name="description" content="description de la page"/>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
-    <div class="firstMenu">
-      <h2>Êtes vous assez courageux(se) pour entrer ?</h2>
-    </div>
-    <audio src="audio/bruitAccueil.mp3" id="musiqueAccueil"></audio>
-    <img src="images/hamburger.png" id="hamburger" alt="hamburger">
-    <div class="logo">
-      <a href="index.html" title="index">
-        <img src="images/logo.png"  id="logo" alt="logo">
-      </a>
-    </div>
+    <header>
+      <div class="firstMenu">
+        <h2>Êtes vous assez courageux(se) pour entrer ?</h2>
+      </div>
+      <audio src="audio/bruitAccueil.mp3" id="musiqueAccueil"></audio>
+      <img src="images/hamburger.png" id="hamburger" alt="hamburger">
+      <div class="logo">
+        <a href="index.html" title="index">
+          <img src="images/logo.png"  id="logo" alt="logo">
+        </a>
+      </div>
+      <div class="howToPlayPop">
+        <img src="images/croix.png" alt="croix">
+        <a href="pages/howtoplay.html" title="how to play">Comment jouer ?</a>
+      </div>
+    </header>
 
     <div class="containerHamburger">
-      <div class="menuHamburger">
-        <img src="images/blackhamburger.png" id="blackHamburger" alt="blackhamburger">
+      <div class="hamburgerMenu">
+        <img src="images/blackhamburger.png" id="blackHamburger" alt="blackHamburger">
           <div class="menuHamburgerOnglets">
           <ul>
-            <li><a href="index.html" title="Accueil">Accueil</a></li>
-            <li><a href="game.html" title="jeu">Jouer</a></li>
-            <li><a href="pages/howtoplay.html" title="comment jouer">Comment jouer ?</a></li>
+            <li><a href="index.html" title="Home">Accueil</a></li>
+            <li><a href="game.html" title="game">Jouer</a></li>
+            <li><a href="pages/howtoplay.html" title="howToPlay">Comment jouer ?</a></li>
           </ul>
         </div>
       </div>
@@ -34,9 +40,12 @@
     <div class="slider">
       <div class="sliderContainer">
         <img src="images/screen1.png" class ="sliderImg currentImg" alt="Items 1">
-        <img src="images/screen1.png" class ="sliderImg" alt="Items 2">
-        <img src="images/screen1.png" class ="sliderImg" alt="Items 3">
+        <img src="images/screen2.png" class ="sliderImg" alt="Items 2">
+        <img src="images/screen3.png" class ="sliderImg" alt="Items 3">
       </div>
+    </div>
+    <div class="levelChoice">
+      <h4>Niveau 1</h4>
     </div>
     <div class="divButton">
       <div id="button">
@@ -48,7 +57,7 @@
       <p id="textTeaser">Vous êtes un aventurier et vous devez tenter de survivre aux zombies dans un labyrinthe complexe. Pour cela, récupérez votre équipement, caché dans les différents recoins que vous devrez explorer. Dès le début de la partie, vous devez parcourir le labyrinthe afin de retrouver votre équipement. Mais ne trainez pas trop, un zombie affamé vous poursuit !<br> Lorsque vous avez retrouvé votre armure complète et votre arme, vous pourrez enfin vous enfuir. Mais il se peut qu'à ce moment la lumière s'éteigne, j'espère que vous n'avez pas peur du noir...<br><br>Jeu réalisé par l'equipe 18 composée de Julien Wagentrutz, Canan Yesilaltay, Nina Moilier, et Axel Viskovic. </p>
     </div>
     <div class="divHowToPlay">
-      <a href="pages/howtoplay.html" id="howToPlay" title="comment jouer">Comment jouer ?</a>
+      <a href="pages/howtoplay.html" id="howToPlay" title="howToPlay">Comment jouer ?</a>
     </div>
     <script src="scripts/main.js"></script>
     <script src="scripts/storage.js"></script>

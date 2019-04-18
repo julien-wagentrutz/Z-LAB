@@ -4,11 +4,14 @@ body{
   font-size: 16px;
   color : white;
   background-color: black;
+  font-family: 'VT323', monospace;
 }
 
 audio{
   display: block;
 }
+
+
 /* HEADER*/
 
 .firstMenu{
@@ -22,7 +25,6 @@ audio{
 
 
 .firstMenu h2{
-  font-family: "Morris Roman";
   font-size: 60px;
   color : white;
   margin : 0 auto;
@@ -31,13 +33,49 @@ audio{
 .logo{
   display: flex;
   justify-content: center;
+  text-align: center;
+
+  margin-bottom: 30px;
 }
 
 #logo{
-  width: 510px;
-  height: 170px;
-  margin : 30px;
+  width: 40%;
+  height: auto;
+  margin: 0 auto;
 }
+
+.howToPlayPop{
+  width : 16%;
+  height : 60px;
+
+  position: fixed;
+  left : 100%;
+  top : 10%;
+  background-color: red;
+  border-radius: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+
+.howToPlayPop a{
+  text-decoration: none;
+  color : white;
+  font-size: 24px;
+}
+
+.howToPlayPop a:hover{
+  text-decoration : underline;
+}
+
+
+.howToPlayPop img{
+  width : 30px;
+  height: 30px;
+}
+
+
 
 /* HAMBURGER */
 
@@ -66,7 +104,7 @@ audio{
   justify-content: flex-start;
 }
 
-.menuHamburger{
+.hamburgerMenu{
     z-index : 2;
   display : block;
   right :100%;
@@ -90,7 +128,6 @@ audio{
 .menuHamburgerOnglets ul li a{
   color : black;
   text-decoration: none;
-  font-family: "Morris Roman";
   font-size: 24px;
 }
 
@@ -141,22 +178,33 @@ audio{
 
 /* MAIN */
 
+.levelChoice{
+  display: flex;
+  justify-content: center;
+}
+
+.levelChoice h4{
+  font-size: 25px;
+}
+
 .divButton{
   display: flex;
   justify-content: center;
 }
 
 #button{
-  margin : 32px 0px;
+  margin : 0 auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
   width : 250px;
   height: 100px;
   background-color: red;
   border-radius: 50px;
-  position : fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   border : 0px solid white;
+  z-index : 100;
 }
 
 #button:hover{
@@ -168,7 +216,6 @@ audio{
   color : white;
   text-decoration: none;
   font-size: 50px;
-  font-family: "army rust";
 }
 
 .teaser{
@@ -180,13 +227,13 @@ audio{
 
 h3{
   width : 140px;
-  padding-top : 50px;
+  padding-top : 40px;
   padding-bottom: 30px;
   width: 200px;
   margin: 0 auto;
   font-size: 55px;
   letter-spacing: 3px;
-  font-family: "Morris Roman"
+  text-align: center;
 }
 
 #textTeaser{
@@ -194,15 +241,15 @@ h3{
   margin: 0px 20%;
   font-size: 25px;
   text-justify : inter-word;
-  font-family: "Morris Roman";
 }
 
 
 .divHowToPlay{
+  opacity: 0;
   display: flex;
   justify-content: center;
   padding-top : 40px;
-  padding-bottom: 500px;
+  padding-bottom: 50px;
 }
 
 #howToPlay{
@@ -213,6 +260,7 @@ h3{
 #howToPlay:hover{
   color : grey;
 }
+
 
 
 @media screen and (max-width : 990px){
