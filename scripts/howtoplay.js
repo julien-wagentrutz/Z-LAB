@@ -30,17 +30,16 @@ for(let i=0; i<triangle.length; i++){
   triangle[i].addEventListener(
     "click",
     function(){
-      howP[i].style.display="block"
-      howImg[i].style.display="block"
-      triangle[i].classList.add("triangleUp")
-      triangle[i].addEventListener(
-        "click",
-        function(){
+      if(howP[i].style.display=="none"){
+        howP[i].style.display="block"
+        howImg[i].style.display="block"
+        triangle[i].classList.add("triangleUp")
+      }
+      if(howP[i].style.display=="block"){
           howP[i].style.display="none"
           howImg[i].style.display="none"
           triangle[i].classList.remove("triangleUp")
-        }
-      )
+      }
     }
   )
 }

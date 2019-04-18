@@ -72,6 +72,11 @@ body{
   font-size: 24px;
 }
 
+.menuHamburgerOnglets ul li a:hover{
+  color : white;
+  transition: all .3s;
+}
+
 /*MAIN*/
 
 .howToPlay h1{
@@ -98,9 +103,9 @@ body{
   margin-bottom : 80px;
 }
 
+
 .how{
   display: flex;
-  flex-direction: center;
   justify-content: center;
   margin : 50px 20%;
   border : 1px solid white;
