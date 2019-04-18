@@ -113,18 +113,26 @@ body{
 }
 
 .how p{
-  display : none;
   font-family: "Morris Roman";
   font-size : 22px;
   text-align: center;
 }
 
-
+.howPContainer{
+  display: none;
+}
 
 .howToPlay img{
-  display : none;
   width : 300px;
   height: 300px;
+}
+
+.howImgContainer{
+  display: none;
+}
+
+.displayBlock{
+  display: block;
 }
 
 

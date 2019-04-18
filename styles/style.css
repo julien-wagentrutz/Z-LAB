@@ -78,9 +78,54 @@ body{
     background-color: #000;
 }
 
+/* START  */
+
+.screenStart{
+  position: absolute;
+  width : 600px;
+  height: 600px;
+  border : 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.screenStart h2{
+  color : white;
+  font-family: "Morris Roman";
+  font-size: 30px;
+}
+
+.buttonStart{
+  width : 250px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50px;
+  border : 0px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px;
+}
+
+.buttonStart{
+  font-family: "Morris Roman";
+  font-size: 50px;
+  letter-spacing: 3px;
+}
+
+#buttonStart:hover{
+  border : 3px solid white;
+  transition:all 0.2s;
+}
+
+
+
 /* NIVEAU / POINTS DE VIE */
 
 .containerGame{
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
