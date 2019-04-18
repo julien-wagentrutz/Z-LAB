@@ -33,19 +33,17 @@ for(let i=0; i<triangle.length; i++){
   triangle[i].addEventListener(
     "click",
     function(){
-      if(displayNone==true){
-        howPContainer[i].classList.add("displayBlock")
-        howImgContainer[i].classList.add("displayBlock")
-        triangle[i].classList.add("triangleUp")
-        displayNone=false
-      }else{
+      if(this.classList.contains('triangleUp')){
         howPContainer[i].classList.remove("displayBlock")
         howImgContainer[i].classList.remove("displayBlock")
         triangle[i].classList.remove("triangleUp")
-        displayNone=true
+
       }
-
-
+      else{
+        howPContainer[i].classList.add("displayBlock")
+        howImgContainer[i].classList.add("displayBlock")
+        triangle[i].classList.add("triangleUp")
+      }
     }
   )
 }
