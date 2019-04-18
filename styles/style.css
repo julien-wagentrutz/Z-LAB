@@ -11,12 +11,12 @@ body{
 
 @font-face {
 	font-family: "Morris Roman";
-	src: url('morris-roman.black.ttf');
+	src: url('fonts/morris-roman.black.ttf');
 }
 
 @font-face {
 	font-family: "Army Rust";
-	src: url('ARMY RUST 2.ttf');
+	src: url('fonts/ARMY RUST 2.ttf');
 }
 
 .logo{
