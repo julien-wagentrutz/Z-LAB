@@ -4,8 +4,8 @@ const menuHamburger = document.querySelector(".menuHamburger")
 const triangle = document.querySelectorAll(".triangle")
 const howP = document.querySelectorAll(".how p")
 const howImg = document.querySelectorAll(".howToPlay img")
-
-
+const howPContainer = document.querySelectorAll(".howPContainer")
+const howImgContainer = document.querySelectorAll(".howImgContainer")
 // HAMBURGER
 
 hamburger.addEventListener(
@@ -26,20 +26,25 @@ blackHamburger.addEventListener(
 
 // TRIANGLE DEROULANT
 
+let displayNone = true
+
 for(let i=0; i<triangle.length; i++){
   triangle[i].addEventListener(
     "click",
     function(){
-      if(howP[i].style.display=="none"){
-        howP[i].style.display="block"
-        howImg[i].style.display="block"
+      if(displayNone==true){
+        howPContainer[i].classList.add("displayBlock")
+        howImgContainer[i].classList.add("displayBlock")
         triangle[i].classList.add("triangleUp")
+        displayNone=false
+      }else{
+        howPContainer[i].classList.remove("displayBlock")
+        howImgContainer[i].classList.remove("displayBlock")
+        triangle[i].classList.remove("triangleUp")
+        displayNone=true
       }
-      if(howP[i].style.display=="block"){
-          howP[i].style.display="none"
-          howImg[i].style.display="none"
-          triangle[i].classList.remove("triangleUp")
-      }
+
+
     }
   )
 }

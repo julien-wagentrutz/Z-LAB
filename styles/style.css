@@ -76,9 +76,33 @@ body{
     background-color: #000;
 }
 
+/* START  */
+
+
+
+.buttonStart{
+  width : 150px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50px;
+  border : 0px solid white;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttonStart:hover{
+  border : 3px solid white;
+  transition:all 0.2s;
+}
+
+
+
 /* NIVEAU / POINTS DE VIE */
 
 .containerGame{
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
