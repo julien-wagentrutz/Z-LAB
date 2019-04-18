@@ -9,6 +9,15 @@ body{
     font-family: 'Raleway', sans-serif;
 }
 
+@font-face {
+	font-family: "Morris Roman";
+	src: url('morris-roman.black.ttf');
+}
+
+@font-face {
+	font-family: "Army Rust";
+	src: url('ARMY RUST 2.ttf');
+}
 
 .logo{
   display: flex;

@@ -9,6 +9,17 @@ body{
 audio{
   display: block;
 }
+
+@font-face {
+	font-family: "Morris Roman";
+	src: url('morris-roman.black.ttf');
+}
+
+@font-face {
+	font-family: "Army Rust";
+	src: url('ARMY RUST 2.ttf');
+}
+
 /* HEADER*/
 
 .firstMenu{
