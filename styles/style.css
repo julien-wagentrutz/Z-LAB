@@ -1,11 +1,202 @@
 body{
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
+    background-color: black;
+    color : white;
+    font-family: 'Raleway', sans-serif;
 }
+
+
+.logo{
+  display: flex;
+  justify-content: center;
+}
+
+#logo{
+  width: 270px;
+  height: 90px;
+  margin : 0px;
+}
+
+/* HAMBURGER */
+
+#hamburger{
+  left : 30px;
+  top : 30px;
+  width : 50px;
+  height: 50px;
+  position : fixed;
+}
+#blackHamburger{
+  opacity : 0;
+  transition : all 2.5s;
+  left : 30px;
+  top : 30px;
+  width : 50px;
+  height: 50px;
+  position : absolute;
+}
+
+.containerHamburger{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.menuHamburger{
+  display : block;
+  right :100%;
+  transition: all 1s;
+  top : 0px;
+  position: fixed;
+  width : 200px;
+  height: 700px;
+  background: linear-gradient(#6b6969, #bebdbd);
+}
+
+.menuHamburgerOnglets{
+  padding-top : 140px;
+}
+
+.menuHamburgerOnglets ul li{
+  list-style: none;
+  padding: 20px 0px;
+}
+
+.menuHamburgerOnglets ul li a{
+  color : black;
+  text-decoration: none;
+  font-family: "Morris Roman";
+  font-size: 24px;
+}
+
+
 #game{
     background-color: #000;
 }
+
+/* NIVEAU / POINTS DE VIE */
+
+.containerGame{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.levelLife{
+  width : 300px;
+  height: 500px;
+  border : 1px solid white;
+  display: flex;
+  flex-direction: column;
+}
+
+.level{
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#levelNumber{
+  font-size: 30px;
+}
+
+.life{
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hearth{
+  display: flex;
+  justify-content: space-around;
+}
+
+.hearth img{
+  width : 80px;
+  height: 80px;
+}
+
+.hearthDead{
+  opacity : .2;
+}
+
+/* ÉQUIPEMENT */
+
+.stuffPlayer{
+  width : 300px;
+  height: 500px;
+  border : 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stuffPlayer h2{
+  color : white;
+  font-size: 20px;
+}
+
+.stuffPlayerShow{
+  display: flex;
+  flex-direction: column;
+}
+
+.stuffClassic{
+  width :120px;
+  height: 120px;
+  opacity: 0;
+  position: absolute;
+}
+
+.stuffWhite{
+  width :120px;
+  height: 120px;
+  opacity: .2;
+  position: absolute;
+}
+
+#stuffKey, #stuffBomb, #stuffSword{
+  margin: 4px 0px;
+  width : 120px;
+  height: 120px;
+  border : 1px solid white;
+}
+
+/* BOUTON RETOUR */
+
+.divButton{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+#buttonReturn{
+  width : 150px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border : 0px solid white;
+  }
+
+  #buttonReturn:hover{
+    border : 3px solid white;
+    transition:all 0.2s;
+  }
+
+  #buttonReturn a{
+    color : white;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: "Morris Roman";
+  }

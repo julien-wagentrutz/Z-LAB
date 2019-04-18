@@ -2,51 +2,96 @@
 <html lang=fr>
     <head>
         <meta charset="UTF-8">
-        <title>Document</title>
+        <title>Z-LAB</title>
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
-        <img src="images/sprites/images_level_0/floor0.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/wall0.png" hidden="hidden">
-        <img src="images/sprites/images_level_2/wall2.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/floor1.png" hidden="hidden">
-        <img src="images/sprites/images_level_2/floor2.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/wall1.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/figure0-down.png" hidden="hidden">
-        <img src="images/sprites/images_level_2/figure2-down.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/figure1-down.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/sword0.png" hidden="hidden">
-        <img src="images/sprites/images_level_2/sword2.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/sword1.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/bomb0.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/bomb1.png" hidden="hidden">
-        <img src="images/sprites/images_level_2/bomb2.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/door0.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/door1.png" hidden="hidden">
-        <img src="images/sprites/images_level_2/door2.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/key0.png" hidden="hidden">
-        <img src="images/sprites/images_level_2/key2.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/key1.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/brokenWall0.png" hidden="hidden">
-        <img src="images/sprites/images_level_2/brokenWall2.png" hidden="hidden">
-        <img src="images/sprites/images_level_1/brokenWall1.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/fight0-down.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/fight2-down.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/fight0-left.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/fight2-left.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/fight0-right.png" hidden="hidden">
-        <img src="images/sprites/images_level_0/fight1-right.png" hidden="hidden">
 
-        <img src="images/sprites/ball.png" hidden="hidden">
+      <audio src="audio/musiqueNv1.m4a" controls></audio>
+      <audio src="audio/musiqueNv2.m4a" controls></audio>      
+      <img src="images/hamburger.png" id="hamburger" alt="hamburger">
+      <div class="logo">
+        <a href="index.html" title="index">
+          <img src="images/logo.png"  id="logo" alt="logo">
+        </a>
+      </div>
+      <div class="containerGame">
+        <div class="levelLife">
+          <div class="level">
+            <h2>Niveau</h2>
+            <p id="levelNumber">1</p>
+          </div>
+          <div class="life">
+            <h2>Vie</h2>
+            <div class="hearth">
+              <img src="images/pixelHearth.png" alt="coeur pixel">
+              <img src="images/pixelHearth.png" alt="coeur pixel">
+              <img src="images/pixelHearth.png" alt="coeur pixel">
+            </div>
+          </div>
+        </div>
+        <div id="divGame">
+            <img src="images/sprites/images_level_0/floor0.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/wall0.png" hidden="hidden">
+            <img src="images/sprites/images_level_2/wall2.png" hidden="hidden">
+            <img src="images/sprites/images_level_1/floor1.png" hidden="hidden">
+            <img src="images/sprites/images_level_2/floor2.png" hidden="hidden">
+            <img src="images/sprites/images_level_1/wall1.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/figure0-down.png" hidden="hidden">
+            <img src="images/sprites/images_level_2/figure2-down.png" hidden="hidden">
+            <img src="images/sprites/images_level_1/figure1-down.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/sword0.png" hidden="hidden">
+            <img src="images/sprites/images_level_2/sword2.png" hidden="hidden">
+            <img src="images/sprites/images_level_1/sword1.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/bomb0.png" hidden="hidden">
+            <img src="images/sprites/images_level_1/bomb1.png" hidden="hidden">
+            <img src="images/sprites/images_level_2/bomb2.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/door0.png" hidden="hidden">
+            <img src="images/sprites/images_level_1/door1.png" hidden="hidden">
+            <img src="images/sprites/images_level_2/door2.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/key0.png" hidden="hidden">
+            <img src="images/sprites/images_level_2/key2.png" hidden="hidden">
+            <img src="images/sprites/images_level_1/key1.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/brokenWall0.png" hidden="hidden">
+            <img src="images/sprites/images_level_2/brokenWall2.png" hidden="hidden">
+            <img src="images/sprites/images_level_1/brokenWall1.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/fight0-down.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/fight2-down.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/fight0-left.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/fight2-left.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/fight0-right.png" hidden="hidden">
+            <img src="images/sprites/images_level_0/fight1-right.png" hidden="hidden">
 
-        <canvas id="game" width="600" height="600"></canvas>
+            <canvas id="game" width="600" height="600"></canvas>
 
-        <button id="restart">Restart</button>
-        <script type="text/javascript" src="mazes/mazes.js"></script>
-        <script type="text/javascript" src="scripts/class/blockClass.js"></script>
-        <script type="text/javascript" src="scripts/class/playerClass.js"></script>
-        <script type="text/javascript" src="scripts/class/zombieClass.js"></script>
-        <script type="text/javascript" src="scripts/class/gameClass.js"></script>
-        <script type="text/javascript" src="scripts/game.js"></script>
+            <button id="restart">Restart</button>
+            <script type="text/javascript" src="mazes/mazes.js"></script>
+            <script type="text/javascript" src="scripts/class/blockClass.js"></script>
+            <script type="text/javascript" src="scripts/class/playerClass.js"></script>
+            <script type="text/javascript" src="scripts/class/zombieClass.js"></script>
+            <script type="text/javascript" src="scripts/class/gameClass.js"></script>
+            <script type="text/javascript" src="scripts/game.js"></script>
+        </div>
+        <div class="stuffPlayer">
+          <h2>ÉQUIPEMENT</h2>
+          <div class="stuffPlayerShow">
+            <div id="stuffSword">
+              <img src="images/sword.png" class="stuffClassic" alt="bomb transparent">
+                <img src="images/swordWhite.png" class="stuffWhite" alt="bomb transparent">
+            </div>
+            <div id="stuffBomb">
+              <img src="images/bomb.png" class="stuffClassic" alt="bomb transparent">
+              <img src="images/bombWhite.png" class="stuffWhite" alt="bomb transparent">
+            </div>
+            <div id="stuffKey">
+              <img src="images/key.png" class="stuffClassic" alt="bomb transparent">
+              <img src="images/keyWhite.png" class="stuffWhite" alt="bomb transparent">
+            </div>
+          </div>
+          <div class="divButton">
+            <button id="buttonReturn"><a href="index.html">Retour</a></button>
+          </div>
+        </div>
+      </div>
     </body>
 </html>

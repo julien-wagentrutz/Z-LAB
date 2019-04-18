@@ -6,6 +6,9 @@ body{
   background-color: black;
 }
 
+audio{
+  display: block;
+}
 /* HEADER*/
 
 .firstMenu{
@@ -19,7 +22,7 @@ body{
 
 
 .firstMenu h2{
-  font-family: "ARMY RUST";
+  font-family: "Morris Roman";
   font-size: 60px;
   color : white;
   margin : 0 auto;
@@ -58,12 +61,13 @@ body{
 
 .containerHamburger{
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: flex-start;
 }
 
 .menuHamburger{
-  z-index: 3;
+    z-index : 2;
   display : block;
   right :100%;
   transition: all 1s;
@@ -90,23 +94,21 @@ body{
   font-size: 24px;
 }
 
+.menuHamburgerOnglets ul li a:hover{
+  color : white;
+  transition: all .3s;
+}
 
 /* SLIDER */
 
 .slider{
-  z-index : 1;
+  height: 300px;
   opacity: 0;
   position: relative;
   display: flex;
   justify-content: center;
   transition: all 2s;
   overflow: hidden;
-}
-
-#murPixel{
-  width : 100%;
-  height: 300px;
-  transition: all 2s;
 }
 
 .sliderContainer{
@@ -116,7 +118,7 @@ body{
   top : 0px;
   display: flex;
   justify-content: center;
-  padding-bottom: 40px;
+  padding-bottom: 0px;
   transition: all 1s;
 }
 
@@ -145,7 +147,7 @@ body{
 }
 
 #button{
-  margin : 23px 0px;
+  margin : 32px 0px;
   width : 250px;
   height: 100px;
   background-color: red;
@@ -172,12 +174,14 @@ body{
 .teaser{
   display: none;
   width: 100%;
-  padding-bottom : 400px;
+  padding-bottom : 20px;
   margin: 0 auto;
 }
 
 h3{
-  padding: 50px 0px;
+  width : 140px;
+  padding-top : 50px;
+  padding-bottom: 30px;
   width: 200px;
   margin: 0 auto;
   font-size: 55px;
@@ -187,23 +191,27 @@ h3{
 
 #textTeaser{
   width: 60%;
-  margin: 30px 20%;
+  margin: 0px 20%;
   font-size: 25px;
   text-justify : inter-word;
-  font-family: 'Raleway', sans-serif;
-}
-
-.triangle:hover{
-  border-top: 30px solid grey;
+  font-family: "Morris Roman";
 }
 
 
-.triangle{
-  width: 0px;
-  margin: 0 auto;
-  border-left: 20px solid transparent;
-	border-right: 20px solid transparent;
-	border-top: 30px solid white;
+.divHowToPlay{
+  display: flex;
+  justify-content: center;
+  padding-top : 40px;
+  padding-bottom: 500px;
+}
+
+#howToPlay{
+  font-size: 28px;
+  color : white
+}
+
+#howToPlay:hover{
+  color : grey;
 }
 
 

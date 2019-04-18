@@ -10,22 +10,14 @@ const logo = document.querySelector("logo")
 const slider = document.querySelector(".slider")
 const sliderContainer = document.querySelector(".sliderContainer")
 const sliderImg = document.querySelectorAll(".sliderImg")
+const musiqueAccueil = document.querySelector("#musiqueAccueil")
 
 
-// PARAGRAPHE PRESENTATION
-
-  triangle.addEventListener(
-    "click",
-    function(){
-      textTeaser.innerHTML="<p>Vous êtes un aventurier et vous devez tenter de survivre aux zombies dans un labyrinthe complexe. Pour cela, récupérez votre équipement, caché dans les différents recoins que vous devrez explorer. Dès le début de la partie, vous devez parcourir le labyrinthe afin de retrouver votre équipement. Mais ne trainez pas trop, un zombie affamé vous poursuit !<br> Lorsque vous avez retrouvé votre armure complète et votre arme, vous pourrez enfin vous enfuir. Mais il se peut qu'à ce moment la lumière s'éteigne, j'espère que vous n'avez pas peur du noir...<br><br>Jeu réalisé par l'equipe 18 composée de Julien Wagentrutz, Canan Yesilaltay, Nina Moilier, et Axel Viskovic.</p> "
-      triangle.style.display = "none"
-
-    }
-  )
+let musicPlayed = false//pour savoir si la musique d'accueil a déjà été jouée
 
 // OUVERTURE DEBUT
 
-button.addEventListener(
+button.addEventListener( //BOUTON DE LA PREMIERE PAGE
   "click",
   function(){
     slider.style.opacity="1"
@@ -33,6 +25,12 @@ button.addEventListener(
     hamburger.style.transition="all 1s"
     firstMenu.style.opacity="0"
     firstMenu.style.transition="all 1s"
+    if(musicPlayed==false){
+      musiqueAccueil.play()//elle ne sera jouée qu'une fois
+    }
+    musicPlayed=true
+
+    teaser.style.display="block"
 
     button.style.width="210px"
     button.style.height="70px"
@@ -42,10 +40,17 @@ button.addEventListener(
     buttonText.style.transition="all 1s"
 
     buttonText.innerText="Jouer"
-
-    teaser.style.display="block"
-  }
+    button.addEventListener(
+      "click",
+      function(){
+        buttonText.setAttribute('href','game.html')
+      }
+    )
+  },false
 )
+
+
+
 
 
 // HAMBURGER
@@ -68,7 +73,7 @@ blackHamburger.addEventListener(
 
 // SLIDER
 
-  let nbImage = 0
+  let nbImage = 0 //Pour savoir à quelle image on est
 
   for(let i = 0; i<sliderImg.length; i++){
     sliderImg[i].addEventListener(
@@ -88,7 +93,7 @@ blackHamburger.addEventListener(
         if(nbImage==2){
           sliderImg[2].classList.remove("currentImg")
           sliderImg[0].classList.add("currentImg")
-          sliderContainer.style.transform="translateX(0px)"
+          sliderContainer.style.transform="translateX(0px)"//fait repartie le slider à 0
 
         }
         if(nbImage<2){
