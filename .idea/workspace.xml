@@ -2,19 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d24b191-6393-4feb-9ae9-0fc1955521d0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/audio/bruitAccueil.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audio/bruitPas.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audio/musiqueNv1.m4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audio/musiqueNv2.m4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/bomb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/bombWhite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/butDuJeu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/key.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/keyWhite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/pixelHearth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/sword.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/swordWhite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/touchesJeu.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/sprites/images_level_1/zombie1-down.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/sprites/images_level_1/zombie1-down.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/sprites/images_level_1/zombie1-left.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/sprites/images_level_1/zombie1-left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/sprites/images_level_1/zombie1-right.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/sprites/images_level_1/zombie1-right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/sprites/images_level_1/zombie1-up.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/sprites/images_level_1/zombie1-up.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/class/gameClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/class/gameClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/blackhamburger.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/blackhamburger.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/screen1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/screen1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/screen2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/screen2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/howtoplay.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/howtoplay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/howtoplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/howtoplay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/howtoplay.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/howtoplay.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-135353077">
@@ -29,42 +61,42 @@
         <counts>
           <entry key="css" value="1" />
           <entry key="html" value="1" />
-          <entry key="jpg" value="2" />
-          <entry key="js" value="15" />
-          <entry key="png" value="5" />
+          <entry key="jpg" value="4" />
+          <entry key="js" value="17" />
+          <entry key="png" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
           <entry key="HTML" value="1" />
-          <entry key="Image" value="7" />
-          <entry key="JavaScript" value="15" />
+          <entry key="Image" value="10" />
+          <entry key="JavaScript" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="106" />
-          <entry key="html" value="353" />
-          <entry key="js" value="11140" />
+          <entry key="css" value="114" />
+          <entry key="html" value="463" />
+          <entry key="js" value="14156" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="106" />
-          <entry key="HTML" value="353" />
-          <entry key="JavaScript" value="11140" />
+          <entry key="CSS" value="114" />
+          <entry key="HTML" value="463" />
+          <entry key="JavaScript" value="14156" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+            <state relative-caret-position="82">
+              <caret line="74" column="33" lean-forward="true" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -72,17 +104,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="53" selection-start-column="53" selection-end-column="53" />
+            <state relative-caret-position="115">
+              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <state relative-caret-position="309">
+              <caret line="176" column="25" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -90,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/class/playerClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1946">
-              <caret line="277" column="20" selection-start-line="277" selection-start-column="16" selection-end-line="277" selection-end-column="20" />
+            <state relative-caret-position="3938">
+              <caret line="188" selection-start-line="188" selection-end-line="188" />
             </state>
           </provider>
         </entry>
@@ -99,8 +131,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/class/gameClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+            <state relative-caret-position="-1271">
+              <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -108,8 +140,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/class/blockClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+            <state relative-caret-position="-52">
+              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -117,8 +149,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/class/zombieClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="50" column="39" lean-forward="true" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
+            <state relative-caret-position="1297">
+              <caret line="78" column="40" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -126,8 +158,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mazes/mazes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+            <state relative-caret-position="874">
+              <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -138,10 +170,24 @@
     <findStrings>
       <find>size</find>
       <find>zombie</find>
-      <find>9</find>
       <find>console</find>
       <find>cons</find>
+      <find>ball</find>
       <find>move</find>
+      <find>bom</find>
+      <find>con</find>
+      <find>dra</find>
+      <find>fight</find>
+      <find>8</find>
+      <find>0</find>
+      <find>maze</find>
+      <find>clearI</find>
+      <find>9</find>
+      <find>clea</find>
+      <find>Zombi</find>
+      <find>Zombie</find>
+      <find>Zom</find>
+      <find>this.posX</find>
       <find>consol</find>
     </findStrings>
     <replaceStrings>
@@ -150,6 +196,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -161,14 +210,14 @@
         <option value="$PROJECT_DIR$/scriptes/main.js" />
         <option value="$PROJECT_DIR$/scriptes/class/blockClass.js" />
         <option value="$PROJECT_DIR$/scriptes/class/gameClass.js" />
-        <option value="$PROJECT_DIR$/scripts/game.js" />
-        <option value="$PROJECT_DIR$/styles/style.css" />
-        <option value="$PROJECT_DIR$/scripts/class/zombieClass.js" />
         <option value="$PROJECT_DIR$/scripts/class/blockClass.js" />
         <option value="$PROJECT_DIR$/mazes/mazes.js" />
         <option value="$PROJECT_DIR$/scripts/class/playerClass.js" />
+        <option value="$PROJECT_DIR$/scripts/class/zombieClass.js" />
+        <option value="$PROJECT_DIR$/scripts/game.js" />
         <option value="$PROJECT_DIR$/scripts/class/gameClass.js" />
         <option value="$PROJECT_DIR$/game.html" />
+        <option value="$PROJECT_DIR$/styles/style.css" />
       </list>
     </option>
   </component>
@@ -211,11 +260,6 @@
             <path>
               <item name="Z-LAB" type="b2602c69:ProjectViewProjectNode" />
               <item name="Z-LAB" type="462c0819:PsiDirectoryNode" />
-              <item name="mazes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Z-LAB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Z-LAB" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -242,12 +286,12 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts/class" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images/sprites/images_level_1" />
       <recent name="$PROJECT_DIR$/images/sprites" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/scripts/class" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -273,12 +317,12 @@
       <option name="presentableId" value="Default" />
       <updated>1555322547718</updated>
       <workItem from="1555322548976" duration="60109000" />
-      <workItem from="1555486695535" duration="2856000" />
+      <workItem from="1555486695535" duration="32395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62965000" />
+    <option name="totallyTimeSpent" value="92504000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -287,6 +331,7 @@
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Command Line Tools Console" weight="0.32923833" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
@@ -299,7 +344,7 @@
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Database" order="0" weight="0.3297568" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -317,12 +362,6 @@
     <entry file="file://$PROJECT_DIR$/scriptes/main.js" />
     <entry file="file://$PROJECT_DIR$/scriptes/class/blockClass.js" />
     <entry file="file://$PROJECT_DIR$/scriptes/class/gridClass.js" />
-    <entry file="file://$PROJECT_DIR$/images/sprites/blockRoad.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/sprites/concrete-block.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/sprites/floor0.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -335,65 +374,78 @@
     <entry file="file://$PROJECT_DIR$/images/sprites/images_level_1/zombie1-left.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/sprites/images_level_0/zombie0-down.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/mazes/mazes.js">
+    <entry file="file://$PROJECT_DIR$/images/sprites/concrete-block.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/sprites/blockRoad.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+        <state relative-caret-position="399">
+          <caret line="72" column="26" lean-forward="true" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/main.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/images/sprites/images_level_0/fight0-up.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="53" selection-start-column="53" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/class/blockClass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/class/playerClass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1946">
-          <caret line="277" column="20" selection-start-line="277" selection-start-column="16" selection-end-line="277" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/class/gameClass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        <state relative-caret-position="115">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/class/zombieClass.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="50" column="39" lean-forward="true" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
+        <state relative-caret-position="1297">
+          <caret line="78" column="40" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/class/playerClass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3938">
+          <caret line="188" selection-start-line="188" selection-end-line="188" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mazes/mazes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/class/blockClass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/class/gameClass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1271">
+          <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+        <state relative-caret-position="82">
+          <caret line="74" column="33" lean-forward="true" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="176" column="25" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
         </state>
       </provider>
     </entry>
