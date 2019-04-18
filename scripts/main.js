@@ -5,12 +5,13 @@ const firstMenu = document.querySelector(".firstMenu")
 const teaser = document.querySelector(".teaser")
 const hamburger = document.querySelector("#hamburger")
 const blackHamburger = document.querySelector("#blackHamburger")
-const menuHamburger = document.querySelector(".menuHamburger")
+const menuHamburger = document.querySelector(".hamburgerMenu")
 const logo = document.querySelector("logo")
 const slider = document.querySelector(".slider")
 const sliderContainer = document.querySelector(".sliderContainer")
 const sliderImg = document.querySelectorAll(".sliderImg")
 const musiqueAccueil = document.querySelector("#musiqueAccueil")
+const howToPlayButton = document.querySelector('.divHowToPlay')
 
 
 let musicPlayed = false//pour savoir si la musique d'accueil a déjà été jouée
@@ -39,6 +40,7 @@ button.addEventListener( //BOUTON DE LA PREMIERE PAGE
     buttonText.style.fontSize="40px"
     buttonText.style.transition="all 1s"
 
+    howToPlayButton.classList.remove('hidden')
     buttonText.innerText="Jouer"
     button.addEventListener(
       "click",
