@@ -16,6 +16,12 @@ class Game{
         this.bomb = false;
         this.keys = false;
         this.maze;
+        this.heart = document.querySelectorAll('.hearth img');
+        this.swordInterface = document.querySelector('#stuffSword .stuffClassic');
+        this.bombInterface = document.querySelector('#stuffBomb .stuffClassic');
+        this.keyInterface = document.querySelector('#stuffKey .stuffClassic');
+        this.lvInterface = document.querySelector('#levelNumber')
+        this.lvInterface.innerHTML = this.lv
 
         document.addEventListener('keydown', (event) => {
             if (this.finish) {
@@ -26,13 +32,14 @@ class Game{
     }
 
     restart(game){
-        console.log('gfjqsgnqkefj')
         game.life = 3;
         game.lv = 0;
+        game.restartLife()
         game.play()
     }
     // play the lv
     play(){
+        this.lvInterface.innerHTML = this.lv
         if(this.life > 0){
             this.size = 600/mazes[this.lv].length;
             this.finish = true;
@@ -168,28 +175,47 @@ class Game{
         this.items++;
         if(find == 2){
             this.sword = true;
+            this.swordInterface.classList.add('stuffGet')
         }
         else if(find == 3 ){
             this.bomb = true
+            this.bombInterface.classList.add('stuffGet')
         }
-        else if(find == 4|| this.items == 3){
+        else if(find == 4){
             this.keys = true
             this.mode = 1;
             this.ctx.clearRect(0,0,600,600)
             player.draw()
+            this.keyInterface.classList.add('stuffGet')
         }
     }
+
+    restartLife(){
+        for(let i = 0; i<this.heart.length;i++){
+            this.heart[i].classList.remove('hearthDead')
+        }
+    }
+
+    restartItems(){
+        this.bombInterface.classList.remove('stuffGet')
+        this.swordInterface.classList.remove('stuffGet')
+        this.keyInterface.classList.remove('stuffGet')
+    }
+
 
     dead(){
         this.ctx.clearRect(0,0,600,600)
         this.life = this.life - 1;
         this.play()
+        this.heart[this.life].classList.add('hearthDead')
+        this.restartItems()
     }
     finishGame(){
         this.finish = false;
         this.ctx.clearRect(0,0,600,600)
         clearInterval(this.int)
         this.lv++; // tester si encore lv sup
+        this.restartItems()
         this.play()
     }
 
