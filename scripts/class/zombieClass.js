@@ -81,7 +81,7 @@ class Zombie{
                 }
             }
         }
-        else if(this.game.maze[this.game.lv][newPosY/this.game.size][newPosX/this.game.size] == 9){
+        else if(this.game.maze[this.game.lv][newPosY/this.game.size][newPosX/this.game.size] == 9 && !this.game.invinsible){
             this.game.dead()
         }
         else{

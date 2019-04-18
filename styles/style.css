@@ -81,6 +81,7 @@ body{
 
 .screenStart{
   position: absolute;
+  top: 0;
   width : 600px;
   height: 600px;
   border : 1px solid white;
@@ -105,6 +106,7 @@ body{
   justify-content: center;
   align-items: center;
   margin: 50px 0px;
+  cursor: pointer;
 }
 
 .buttonStart{
@@ -116,7 +118,65 @@ body{
   border : 3px solid white;
   transition:all 0.2s;
 }
+/* FINISF*/
+.screenFinish{
+  position: absolute;
+  top: 0;
+  width : 600px;
+  height: 600px;
+  border : 1px solid white;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.screenFinish h2{
+  color : white;
+  font-size: 30px;
+}
+/* RESTART  */
+
+.screenRestart{
+  position: absolute;
+  display: none;
+  background-color: #000;
+  top: 0;
+  width : 600px;
+  height: 600px;
+  border : 1px solid white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.screenRestart h2{
+  color : white;
+  font-size: 30px;
+}
+
+.buttonRestart{
+  width : 250px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50px;
+  border : 0px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px;
+  cursor: pointer;
+}
+
+.buttonRestart{
+  font-size: 50px;
+  letter-spacing: 3px;
+}
+
+#buttonRestart:hover{
+  border : 3px solid white;
+  transition:all 0.2s;
+}
 
 
 /* Level / Life Points */

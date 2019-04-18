@@ -15,6 +15,7 @@ class Game{
         this.sword = false;
         this.bomb = false;
         this.keys = false;
+        this.invinsible = false;
         this.maze;
         this.heart = document.querySelectorAll('.hearth img');
         this.swordInterface = document.querySelector('#stuffSword .stuffClassic');
@@ -32,6 +33,8 @@ class Game{
     }
 
     restart(game){
+        divRestart.style.display = 'none'
+        divFinish.style.display = 'none'
         game.life = 3;
         game.lv = 0;
         game.restartLife()
@@ -39,6 +42,9 @@ class Game{
     }
     // play the lv
     play(){
+        if(this.life == 0){
+            divRestart.style.display = 'flex'
+        }
         this.lvInterface.innerHTML = this.lv+1
         if(this.life > 0){
             this.size = 600/mazes[this.lv].length;
@@ -81,7 +87,7 @@ class Game{
             }
             this.zombies = new Array()
             this.drawGrid(mazes[this.lv])
-            alert("C'est perdu !!")
+
         }
 
         //this.zombies.push(new Zombie(this,this.size * (maze[this.lv].length-2),this.size));
@@ -93,7 +99,11 @@ class Game{
         }, tpmpPlayer.speed)*/
 
     }
-
+    cheater(){
+        this.sword  = true
+        this.bomb  = true
+        this.invinsible = true
+    }
     drawGrid(maze){
         let posX = 0;
         let posY = 0;
@@ -215,8 +225,14 @@ class Game{
         this.ctx.clearRect(0,0,600,600)
         clearInterval(this.int)
         this.lv++; // tester si encore lv sup
-        this.restartItems()
-        this.play()
+        if(this.lv == mazes.length){
+            let finish = document.querySelector('.screenFinish')
+            finish.style.display = 'flex'
+        }else{
+            this.restartItems()
+            this.play()
+        }
+
     }
 
 }

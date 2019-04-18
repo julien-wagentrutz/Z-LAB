@@ -104,9 +104,6 @@ class Player {
                     let nb = 1;
                     this.game.ctx.globalAlpha = 0.5
                     for(let j = 1;j<3;j++) {
-
-                        console.log('nb' +nb)
-                        console.log(this.game.maze[this.game.lv].length)
                         if (nb == 2) {
                             this.game.ctx.globalAlpha = 0.2
                         }
@@ -182,7 +179,7 @@ class Player {
                                 this.game.ctx.drawImage(wall, this.posX - this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
                                 // this.game.ctx.globalAlpha = 1
                             }
-                            else if (this.game.maze[this.game.lv][coordY + nb][coordX - nb] == 3 || this.game.maze[this.game.lv + nb][coordY - nb][coordX] == 7) {
+                            else if (this.game.maze[this.game.lv][coordY + nb][coordX - nb] == 3 || this.game.maze[this.game.lv ][coordY - nb][coordX] == 7) {
                                 this.game.ctx.drawImage(bomb, this.posX - this.game.size * nb, this.posY + (this.game.size * nb), this.game.size, this.game.size)
                                 //this.game.ctx.globalAlpha = 1
                             }
@@ -306,8 +303,6 @@ class Player {
 
                             if ((coordY - nb) >= 0) {
                                 if (this.game.maze[this.game.lv][coordY - nb][coordX] == 0) {
-                                    console.log(coordX)
-                                    console.log(coordY)
                                     this.game.ctx.drawImage(road, this.posX, this.posY - this.game.size * nb, this.game.size, this.game.size)
                                     // this.game.ctx.globalAlpha = 1
                                 }

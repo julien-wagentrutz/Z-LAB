@@ -1,4 +1,7 @@
 const buttonStart = document.querySelector(".buttonStart")
+const buttonRestart = document.querySelectorAll(".buttonRestart")
+const divRestart = document.querySelector(".screenRestart")
+const divFinish = document.querySelector(".screenFinish")
 const musiqueJeu = document.querySelector("#musiqueJeu")
 const screenStart = document.querySelector(".screenStart")
 const hamburger = document.querySelector("#hamburger")
@@ -7,8 +10,11 @@ const menuHamburger = document.querySelector(".menuHamburger")
 
 let game = new Game(document.querySelector('#game'));
 
-
-
+for(let i = 0 ;i<buttonRestart.length;i++){
+    buttonRestart[i].addEventListener('click', function () {
+        game.restart(game)
+    })
+}
 
 
 
@@ -17,10 +23,8 @@ buttonStart.addEventListener(
   function(){
     buttonStart.style.opacity="0"
     game.play()
+
     screenStart.style.display="none"
-      document.querySelector('#restart').addEventListener('click',function () {
-          game.restart(game)
-      })
     musiqueJeu.play()
     window.setTimeout(() =>
     {
