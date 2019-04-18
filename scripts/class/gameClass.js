@@ -21,7 +21,7 @@ class Game{
         this.bombInterface = document.querySelector('#stuffBomb .stuffClassic');
         this.keyInterface = document.querySelector('#stuffKey .stuffClassic');
         this.lvInterface = document.querySelector('#levelNumber')
-        this.lvInterface.innerHTML = this.lv
+        this.lvInterface.innerHTML = this.lv+1
 
         document.addEventListener('keydown', (event) => {
             if (this.finish) {
@@ -39,7 +39,7 @@ class Game{
     }
     // play the lv
     play(){
-        this.lvInterface.innerHTML = this.lv
+        this.lvInterface.innerHTML = this.lv+1
         if(this.life > 0){
             this.size = 600/mazes[this.lv].length;
             this.finish = true;

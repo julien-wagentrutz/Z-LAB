@@ -9,9 +9,7 @@ let game = new Game(document.querySelector('#game'));
 
 
 
-document.querySelector('#restart').addEventListener('click',function () {
-    game.restart(game)
-})
+
 
 
 buttonStart.addEventListener(
@@ -23,6 +21,9 @@ buttonStart.addEventListener(
       musiqueJeu.play()
     }
     screenStart.style.display="none"
+      document.querySelector('#restart').addEventListener('click',function () {
+          game.restart(game)
+      })
   }
 )
 

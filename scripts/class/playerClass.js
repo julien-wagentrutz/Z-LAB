@@ -38,6 +38,8 @@ class Player {
         door.src = 'images/sprites/images_level_'+this.game.lv+'/door'+this.game.lv+'.png';
         let broken = new Image()
         broken.src = 'images/sprites/images_level_'+this.game.lv+'/brokenWall'+this.game.lv+'.png';
+        let sword = new Image()
+        sword.src = 'images/sprites/images_level_'+this.game.lv+'/sword'+this.game.lv+'.png';
 
 
 
@@ -99,103 +101,283 @@ class Player {
                     this.drawMove(newImage, dir, this.posX, this.posY, road)// A supp
                     let coordX = this.posX / this.game.size;
                     let coordY = this.posY / this.game.size
-                    let nb = true;
-                    for (let i = 0; i < 4; i++) {
-                        if (nb) {
-                            if (this.game.maze[this.game.lv][coordY + 1][coordX] == 0) {
-                                this.game.ctx.drawImage(road, this.posX, this.posY + this.game.size, this.game.size, this.game.size)
-                            }
-                            else if (this.game.maze[this.game.lv][coordY + 1][coordX] == 1) {
-                                this.game.ctx.drawImage(wall, this.posX, this.posY + this.game.size, this.game.size, this.game.size)
-                            }
-                            else if (this.game.maze[this.game.lv][coordY + 1][coordX] == 3 ||this.game.maze[this.game.lv][coordY + 1][coordX] == 7) {
-                                this.game.ctx.drawImage(bomb, this.posX, this.posY + this.game.size, this.game.size, this.game.size)
-                            }
-                            else if (this.game.maze[this.game.lv][coordY + 1][coordX] == 5) {
-                                this.game.ctx.drawImage(door, this.posX, this.posY + this.game.size, this.game.size, this.game.size)
-                            }
-                            else if (this.game.maze[this.game.lv][coordY + 1][coordX] == 6) {
-                                this.game.ctx.drawImage(broken, this.posX, this.posY + this.game.size, this.game.size, this.game.size)
-                            }
-                            else if (this.game.maze[this.game.lv][coordY + 1][coordX].isEnnemi) {
-                                console.log('Down')
+                    let nb = 1;
+                    this.game.ctx.globalAlpha = 0.5
+                    for(let j = 1;j<3;j++) {
 
-                                let zombie = new Image()
-                                zombie.src = 'images/sprites/images_level_'+this.game.lv+'/zombie'+this.game.lv+'-down.png';
-                                this.game.ctx.drawImage(zombie, this.posX, this.posY + this.game.size, this.game.size, this.game.size)
-                            }
-
-                            if (this.game.maze[this.game.lv][coordY][coordX + 1] == 0) {
-                                this.game.ctx.drawImage(road, this.posX + this.game.size, this.posY, this.game.size, this.game.size)
-                            }
-                            else if (this.game.maze[this.game.lv][coordY][coordX + 1] == 1) {
-                                this.game.ctx.drawImage(wall, this.posX + this.game.size, this.posY, this.game.size, this.game.size)
-                            }
-                            else if (this.game.maze[this.game.lv][coordY][coordX + 1] == 3 || this.game.maze[this.game.lv][coordY][coordX + 1] == 7) {
-                                this.game.ctx.drawImage(bomb, this.posX + this.game.size, this.posY, this.game.size, this.game.size)
-                            }
-                            else if (this.game.maze[this.game.lv][coordY][coordX + 1] == 5) {
-                                this.game.ctx.drawImage(door, this.posX + this.game.size, this.posY, this.game.size, this.game.size)
-                            }
-                            else if (this.game.maze[this.game.lv][coordY][coordX + 1] == 6) {
-                                this.game.ctx.drawImage(broken, this.posX + this.game.size, this.posY, this.game.size, this.game.size)
-                            }
-                            else if (this.game.maze[this.game.lv][coordY][coordX + 1].isEnnemi) {
-                                console.log('right')
-                                let zombie = new Image()
-                                zombie.src = 'images/sprites/images_level_'+this.game.lv+'/zombie'+this.game.lv+'-right.png';
-                                this.game.ctx.drawImage(zombie, this.posX + this.game.size, this.posY, this.game.size, this.game.size)
-                            }
-
+                        console.log('nb' +nb)
+                        console.log(this.game.maze[this.game.lv].length)
+                        if (nb == 2) {
+                            this.game.ctx.globalAlpha = 0.2
                         }
                         else {
-                            if (this.game.maze[this.game.lv][coordY - 1][coordX] == 0) {
-                                this.game.ctx.drawImage(road, this.posX, this.posY - this.game.size, this.game.size, this.game.size)
+                            this.game.ctx.globalAlpha = 0.5
+                            if (this.game.maze[this.game.lv][coordY + nb][coordX + nb] == 0) {
+                                this.game.ctx.drawImage(road, this.posX + this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
                             }
-                            else if (this.game.maze[this.game.lv][coordY - 1][coordX] == 1) {
-                                this.game.ctx.drawImage(wall, this.posX, this.posY - this.game.size, this.game.size, this.game.size)
+                            else if (this.game.maze[this.game.lv][coordY + nb][coordX + nb] == 1) {
+                                this.game.ctx.drawImage(wall, this.posX + this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                //  this.game.ctx.globalAlpha = 1
                             }
-                            else if (this.game.maze[this.game.lv][coordY - 1][coordX] == 3 || this.game.maze[this.game.lv][coordY - 1][coordX] == 7) {
-                                this.game.ctx.drawImage(bomb, this.posX, this.posY - this.game.size, this.game.size, this.game.size)
+                            else if (this.game.maze[this.game.lv][coordY + nb][coordX + nb] == 3 || this.game.maze[this.game.lv][coordY + nb][coordX + nb] == 7) {
+                                this.game.ctx.drawImage(bomb, this.posX + this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                //  this.game.ctx.globalAlpha = 1
                             }
-                            else if (this.game.maze[this.game.lv][coordY - 1][coordX] == 5) {
-                                this.game.ctx.drawImage(door, this.posX, this.posY - this.game.size, this.game.size, this.game.size)
+                            else if (this.game.maze[this.game.lv][coordY + nb][coordX + nb] == 5) {
+                                this.game.ctx.drawImage(door, this.posX + this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                //  this.game.ctx.globalAlpha = 1
                             }
-                            else if (this.game.maze[this.game.lv][coordY - 1][coordX] == 6) {
-                                this.game.ctx.drawImage(broken, this.posX, this.posY - this.game.size, this.game.size, this.game.size)
+                            else if (this.game.maze[this.game.lv][coordY + nb][coordX + nb] == 6) {
+                                this.game.ctx.drawImage(broken, this.posX + this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
                             }
-                            else if (this.game.maze[this.game.lv][coordY - 1][coordX].isEnnemi) {
-                                console.log('Up')
+                            else if (this.game.maze[this.game.lv][coordY + nb][coordX + nb].isEnnemi) {
                                 let zombie = new Image()
-                                zombie.src = 'images/sprites/images_level_'+this.game.lv+'/zombie'+this.game.lv+'-up.png';
-                                this.game.ctx.drawImage(zombie, this.posX, this.posY - this.game.size, this.game.size, this.game.size)
+                                zombie.src = 'images/sprites/images_level_' + this.game.lv + '/zombie' + this.game.lv + '-down.png';
+                                this.game.ctx.drawImage(zombie, this.posX + this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                //   this.game.ctx.globalAlpha = 1
                             }
-                            if (this.game.maze[this.game.lv][coordY][coordX - 1] == 0) {
-                                this.game.ctx.drawImage(road, this.posX - this.game.size, this.posY, this.game.size, this.game.size)
+                            else if (this.game.maze[this.game.lv][coordY + nb][coordX + nb]  == 2) {
+                                this.game.ctx.drawImage(sword, this.posX + this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                //   this.game.ctx.globalAlpha = 1
                             }
-                            else if (this.game.maze[this.game.lv][coordY][coordX - 1] == 1) {
-                                this.game.ctx.drawImage(wall, this.posX - this.game.size, this.posY, this.game.size, this.game.size)
+                            if (this.game.maze[this.game.lv][coordY - nb][coordX + nb] == 0) {
+
+                                this.game.ctx.drawImage(road, this.posX + this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                //  this.game.ctx.globalAlpha = 1
                             }
-                            else if (this.game.maze[this.game.lv][coordY][coordX - 1] == 3 ||this.game.maze[this.game.lv][coordY][coordX - 1] == 7) {
-                                this.game.ctx.drawImage(bomb, this.posX - this.game.size, this.posY, this.game.size, this.game.size)
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX + nb] == 1) {
+                                this.game.ctx.drawImage(wall, this.posX + this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                //this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX + nb] == 3 || this.game.maze[this.game.lv][coordY - nb][coordX + nb] == 7) {
+                                this.game.ctx.drawImage(bomb, this.posX + this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size, this.game.size)
+                                //this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX + nb] == 5) {
+                                this.game.ctx.drawImage(door, this.posX + this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size, this.game.size)
+                                //this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX + nb] == 6) {
+                                this.game.ctx.drawImage(broken, this.posX + this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX + nb] == 2) {
+                                this.game.ctx.drawImage(sword, this.posX + this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX + nb].isEnnemi) {
+                                let zombie = new Image()
+                                zombie.src = 'images/sprites/images_level_' + this.game.lv + '/zombie' + this.game.lv + '-right.png';
+                                this.game.ctx.drawImage(zombie, this.posX + this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
+                            }
+
+
+                            if (this.game.maze[this.game.lv][coordY + nb][coordX - nb] == 0) {
+                                this.game.ctx.drawImage(road, this.posX - this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY + nb][coordX - nb] == 1) {
+                                this.game.ctx.drawImage(wall, this.posX - this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY + nb][coordX - nb] == 3 || this.game.maze[this.game.lv + nb][coordY - nb][coordX] == 7) {
+                                this.game.ctx.drawImage(bomb, this.posX - this.game.size * nb, this.posY + (this.game.size * nb), this.game.size, this.game.size)
+                                //this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY + nb][coordX - nb] == 5) {
+                                this.game.ctx.drawImage(door, this.posX - this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX + nb] == 6) {
+                                this.game.ctx.drawImage(broken, this.posX - this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX + nb] == 2) {
+                                this.game.ctx.drawImage(sword, this.posX - this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX + nb].isEnnemi) {
+                                let zombie = new Image()
+                                zombie.src = 'images/sprites/images_level_' + this.game.lv + '/zombie' + this.game.lv + '-up.png';
+                                this.game.ctx.drawImage(zombie, this.posX - this.game.size * nb, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                //this.game.ctx.globalAlpha = 1
+                            }
+
+
+                            if (this.game.maze[this.game.lv][coordY - nb][coordX - nb] == 0) {
+                                this.game.ctx.drawImage(road, this.posX - this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX - nb] == 1) {
+                                this.game.ctx.drawImage(wall, this.posX - this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX - nb] == 3 || this.game.maze[this.game.lv][coordY - nb][coordX - nb] == 7) {
+                                this.game.ctx.drawImage(bomb, this.posX - this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                //  this.game.ctx.globalAlpha = 1
 
                             }
-                            else if (this.game.maze[this.game.lv][coordY][coordX - 1] == 5) {
-                                this.game.ctx.drawImage(door, this.posX - this.game.size, this.posY, this.game.size, this.game.size)
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX - nb] == 5) {
+                                this.game.ctx.drawImage(door, this.posX - this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
                             }
-                            else if (this.game.maze[this.game.lv][coordY][coordX - 1] == 6) {
-                                this.game.ctx.drawImage(broken, this.posX - this.game.size, this.posY, this.game.size, this.game.size)
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX - nb] == 6) {
+                                this.game.ctx.drawImage(broken, this.posX - this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
                             }
-                            else if (this.game.maze[this.game.lv][coordY][coordX - 1].isEnnemi) {
-                                console.log('left')
-
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX - nb] == 2) {
+                                this.game.ctx.drawImage(sword, this.posX - this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
+                            }
+                            else if (this.game.maze[this.game.lv][coordY - nb][coordX - nb].isEnnemi) {
                                 let zombie = new Image()
-                                zombie.src = 'images/sprites/images_level_'+this.game.lv+'/zombie'+this.game.lv+'-left.png';
-                                this.game.ctx.drawImage(zombie, this.posX - this.game.size, this.posY, this.game.size, this.game.size)
+                                zombie.src = 'images/sprites/images_level_' + this.game.lv + '/zombie' + this.game.lv + '-left.png';
+                                this.game.ctx.drawImage(zombie, this.posX - this.game.size * nb, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                // this.game.ctx.globalAlpha = 1
                             }
                         }
-                        nb = !nb
+                        for (let i = 0; i < 2; i++) {
+                            if ((coordY + nb) < this.game.maze[this.game.lv].length) {
+                                if (this.game.maze[this.game.lv][coordY + nb][coordX] == 0) {
+                                    this.game.ctx.drawImage(road, this.posX, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                }
+                                else if (this.game.maze[this.game.lv][coordY + nb][coordX] == 1) {
+                                    this.game.ctx.drawImage(wall, this.posX, this.posY + (this.game.size * nb), this.game.size, this.game.size)
+                                    //  this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY + nb][coordX] == 3 || this.game.maze[this.game.lv][coordY + nb][coordX] == 7) {
+                                    this.game.ctx.drawImage(bomb, this.posX, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                    //  this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY + nb][coordX] == 5) {
+                                    this.game.ctx.drawImage(door, this.posX, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                    //  this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY + nb][coordX] == 6) {
+                                    this.game.ctx.drawImage(broken, this.posX, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY + nb][coordX] == 2) {
+                                    this.game.ctx.drawImage(sword, this.posX, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY + nb][coordX].isEnnemi) {
+                                    let zombie = new Image()
+                                    zombie.src = 'images/sprites/images_level_' + this.game.lv + '/zombie' + this.game.lv + '-down.png';
+                                    this.game.ctx.drawImage(zombie, this.posX, this.posY + this.game.size * nb, this.game.size, this.game.size)
+                                    //   this.game.ctx.globalAlpha = 1
+                                }
+                            }
+
+                            if ((coordX + nb) < this.game.maze[this.game.lv].length) {
+                                if (this.game.maze[this.game.lv][coordY][coordX + nb] == 0) {
+                                    this.game.ctx.drawImage(road, this.posX + this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    //  this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY][coordX + nb] == 1) {
+                                    this.game.ctx.drawImage(wall, this.posX + this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    //this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY][coordX + nb] == 3 || this.game.maze[this.game.lv][coordY][coordX + nb] == 7) {
+                                    this.game.ctx.drawImage(bomb, this.posX + this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    //this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY][coordX + nb] == 5) {
+                                    this.game.ctx.drawImage(door, this.posX + this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    //this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY][coordX + nb] == 6) {
+                                    this.game.ctx.drawImage(broken, this.posX + this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY][coordX + nb] == 2) {
+                                    this.game.ctx.drawImage(sword, this.posX + this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY][coordX + nb].isEnnemi) {
+                                    let zombie = new Image()
+                                    zombie.src = 'images/sprites/images_level_' + this.game.lv + '/zombie' + this.game.lv + '-right.png';
+                                    this.game.ctx.drawImage(zombie, this.posX + this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                            }
+
+                            if ((coordY - nb) >= 0) {
+                                if (this.game.maze[this.game.lv][coordY - nb][coordX] == 0) {
+                                    console.log(coordX)
+                                    console.log(coordY)
+                                    this.game.ctx.drawImage(road, this.posX, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY - nb][coordX] == 1) {
+                                    this.game.ctx.drawImage(wall, this.posX, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY - nb][coordX] == 3 || this.game.maze[this.game.lv][coordY - nb][coordX] == 7) {
+                                    this.game.ctx.drawImage(bomb, this.posX, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                    //this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY - nb][coordX] == 5) {
+                                    this.game.ctx.drawImage(door, this.posX, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY - nb][coordX] == 6) {
+                                    this.game.ctx.drawImage(broken, this.posX, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY - nb][coordX] == 2) {
+                                    this.game.ctx.drawImage(sword, this.posX, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY - nb][coordX].isEnnemi) {
+                                    let zombie = new Image()
+                                    zombie.src = 'images/sprites/images_level_' + this.game.lv + '/zombie' + this.game.lv + '-up.png';
+                                    this.game.ctx.drawImage(zombie, this.posX, this.posY - this.game.size * nb, this.game.size, this.game.size)
+                                    //this.game.ctx.globalAlpha = 1
+                                }
+                            }
+
+                            if ((coordX - nb) >= 0) {
+                                if (this.game.maze[this.game.lv][coordY][coordX - nb] == 0) {
+                                    this.game.ctx.drawImage(road, this.posX - this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY][coordX - nb] == 1) {
+                                    this.game.ctx.drawImage(wall, this.posX - this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY][coordX - nb] == 3 || this.game.maze[this.game.lv][coordY][coordX - nb] == 7) {
+                                    this.game.ctx.drawImage(bomb, this.posX - this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    //  this.game.ctx.globalAlpha = 1
+
+                                }
+                                else if (this.game.maze[this.game.lv][coordY][coordX - nb] == 5) {
+                                    this.game.ctx.drawImage(door, this.posX - this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY][coordX - nb] == 2) {
+                                    this.game.ctx.drawImage(sword, this.posX - this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY][coordX - nb] == 6) {
+                                    this.game.ctx.drawImage(broken, this.posX - this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                                else if (this.game.maze[this.game.lv][coordY][coordX - nb].isEnnemi) {
+                                    let zombie = new Image()
+                                    zombie.src = 'images/sprites/images_level_' + this.game.lv + '/zombie' + this.game.lv + '-left.png';
+                                    this.game.ctx.drawImage(zombie, this.posX - this.game.size * nb, this.posY, this.game.size, this.game.size)
+                                    // this.game.ctx.globalAlpha = 1
+                                }
+                            }
+
+                        }
+                        nb += j
                     }
+                    this.game.ctx.globalAlpha = 1
+
                 }
             }
             else if (this.game.maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 2 || this.game.maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 3 || this.game.maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 4) {

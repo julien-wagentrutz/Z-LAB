@@ -54,7 +54,8 @@ class Zombie{
 
         if(this.game.maze[this.game.lv][newPosY/this.game.size][newPosX/this.game.size] == 0) {
             this.image.src = newImage;
-           if(this.game.mode != 1){this.drawMove(this.image.src,this.dir,newPosX,newPosY,road)}
+          if(this.game.mode != 1){this.drawMove(this.image.src,this.dir,newPosX,newPosY,road)}
+          else{this.moveWithoutDraw(this.dir,newPosX,newPosY)}
 
             if(this.game.player.posY == this.posY){
                 if(this.game.player.posX > this.posX){
@@ -91,6 +92,15 @@ class Zombie{
 
 
 
+    }
+
+    moveWithoutDraw(dir,newPosX,newPosY){
+        this.dir = dir;
+
+        this.game.maze[this.game.lv][this.posY/this.game.size][this.posX/this.game.size] = 0;
+        this.posX = newPosX;
+        this.posY = newPosY;
+        this.game.maze[this.game.lv][this.posY/this.game.size][this.posX/this.game.size] = this
     }
 
     drawMove(newImage,dir,newPosX,newPosY,sprite){
