@@ -14,12 +14,11 @@ class Zombie{
         this.posY = posY;
         this.dir = 'ArrowLeft';
         this.speed = 250;
-        this.int = ''
+        this.int = '';
         this.isEnnemi = true;
 
-        this.draw()
-
-        this.play()
+        this.draw();
+        this.play();
     }
 
     draw(){
@@ -53,14 +52,13 @@ class Zombie{
             newImage = 'images/sprites/images_level_'+this.game.lv+'/zombie'+this.game.lv+'-down.png';
         }
 
-        if(maze[this.game.lv][newPosY/this.game.size][newPosX/this.game.size] == 0) {
+        if(this.game.maze[this.game.lv][newPosY/this.game.size][newPosX/this.game.size] == 0) {
             this.image.src = newImage;
            if(this.game.mode != 1){this.drawMove(this.image.src,this.dir,newPosX,newPosY,road)}
 
             if(this.game.player.posY == this.posY){
                 if(this.game.player.posX > this.posX){
                     this.dir = 'ArrowRight'
-
                 }
                 else{
                     this.dir = 'ArrowLeft'
@@ -82,6 +80,9 @@ class Zombie{
                 }
             }
         }
+        else if(this.game.maze[this.game.lv][newPosY/this.game.size][newPosX/this.game.size] == 9){
+            this.game.dead()
+        }
         else{
                 let randDir = Math.floor(Math.random()* 4)
                 this.dir = DIR[randDir]
@@ -94,21 +95,21 @@ class Zombie{
 
     drawMove(newImage,dir,newPosX,newPosY,sprite){
         this.image.src =  newImage;
-        maze[this.game.lv][this.posY/this.game.size][this.posX/this.game.size] = 0
-        this.game.ctx.drawImage(sprite,this.posX,this.posY, this.game.size,this.game.size)
-        this.dir = dir
+        this.dir = dir;
+
+        this.game.maze[this.game.lv][this.posY/this.game.size][this.posX/this.game.size] = 0;
+        this.game.ctx.drawImage(sprite,this.posX,this.posY, this.game.size,this.game.size);
         this.posX = newPosX;
         this.posY = newPosY;
-        this.game.ctx.drawImage(this.image, this.posX, this.posY, this.game.size, this.game.size)
-        maze[this.game.lv][this.posY/this.game.size][this.posX/this.game.size] = this
+        this.game.ctx.drawImage(this.image, this.posX, this.posY, this.game.size-1, this.game.size-1);
+        this.game.maze[this.game.lv][this.posY/this.game.size][this.posX/this.game.size] = this
     }
 
     play(){
         let zombie = this
-           this.int = setInterval(function () {
+           zombie.int = setInterval(function () {
                 zombie.move()
             }, zombie.speed)
-
     }
 
 }

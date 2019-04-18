@@ -22,7 +22,7 @@ class Block {
             this.image.src = 'images/sprites/images_level_'+lv+'/door'+lv+'.png' //Door
         }
         else if (hit == 6){
-            this.image.src = 'images/sprites/blockRoad.jpg' // block fragile
+            this.image.src = 'images/sprites/images_level_'+lv+'/brokenWall'+lv+'.png' // block fragile
         }
         else if(hit == 7){
             this.image.src = 'images/sprites/images_level_'+lv+'/bomb'+lv+'.png' // Bombe

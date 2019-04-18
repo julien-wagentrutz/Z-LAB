@@ -5,7 +5,7 @@ class Game{
         this.ctx = canvas.getContext('2d');
         this.lv = 0;
         this.life = 3;
-        this.size = 600/maze[this.lv].length;
+        this.size = 600/mazes[this.lv].length;
         this.items = 0;
         this.mode = 0;
         this.finish = true;
@@ -13,8 +13,9 @@ class Game{
         this.player;
         this.zombies = new Array()
         this.sword = false;
-        this.bombe = false;
+        this.bomb = false;
         this.keys = false;
+        this.maze;
 
         document.addEventListener('keydown', (event) => {
             if (this.finish) {
@@ -24,19 +25,58 @@ class Game{
         })
     }
 
+    restart(game){
+        console.log('gfjqsgnqkefj')
+        game.life = 3;
+        game.lv = 0;
+        game.play()
+    }
     // play the lv
     play(){
-        this.size =600/maze[this.lv].length;
-        this.finish = true;
-        this.sword = false;
-        this.bombe = false;
-        this.keys = false;
-        this.mode = 0;
-        this.items = 0
-        this.drawGrid(maze[this.lv]);
-        delete this.player;
-        this.player = new Player(this);
-        this.player.draw();
+        if(this.life > 0){
+            this.size = 600/mazes[this.lv].length;
+            this.finish = true;
+            this.sword = false;
+            this.bomb = false;
+            this.keys = false;
+            this.mode = 0;
+            this.items = 0;
+            let currentMaze = new Array(3);
+            currentMaze[0] = new Array()
+            currentMaze[1] = new Array()
+            currentMaze[2] = new Array()
+
+            for (let i = 0; i < mazes[this.lv].length;i++){
+                currentMaze[this.lv][i] = new Array(mazes[this.lv].length)
+                for (let j = 0; j < mazes[this.lv].length;j++){
+                    currentMaze[this.lv][i][j] = mazes[this.lv][i][j]
+                }
+            }
+            for(let i = 0;i < this.zombies.length;i++){
+                clearInterval(this.zombies[i].int)
+                delete this.zombies[i]
+            }
+
+            this.maze = currentMaze;
+            this.zombies = new Array()
+            delete this.player;
+            this.drawGrid(mazes[this.lv]);
+            this.player = new Player(this);
+            this.player.draw();
+        }
+        else{
+            this.finish = false;
+            this.ctx.clearRect(0,0,600,600)
+            clearInterval(this.int)
+            for(let i = 0;i < this.zombies.length;i++){
+                clearInterval(this.zombies[i].int)
+                delete this.zombies[i]
+            }
+            this.zombies = new Array()
+            this.drawGrid(mazes[this.lv])
+            alert("C'est perdu !!")
+        }
+
         //this.zombies.push(new Zombie(this,this.size * (maze[this.lv].length-2),this.size));
         //this.zombies.push(new Zombie(this,this.size * (maze[this.lv].length-2),this.size * (maze[this.lv].length-2)));
         //this.zombies.push(new Zombie(this,this.size,this.size * (maze[this.lv].length-3)));
@@ -44,6 +84,7 @@ class Game{
        /*this.int = setInterval(function () {
             tpmpPlayer.move(tpmpPlayer.dir)
         }, tpmpPlayer.speed)*/
+
     }
 
     drawGrid(maze){
@@ -105,15 +146,16 @@ class Game{
                     }
                 }
             }*/
-           for(let i = 0; i<maze.length;i++){
-               for(let j =0; j<maze.length;j++){
-                   if(maze[i][j] == 8){
-                       let zombie = new Zombie(this,j*this.size,i*this.size,)
-                       this.zombies.push(zombie);
-                       maze[i][j] = zombie ;
-                   }
-               }
-           }
+        for (let i = 0; i < maze.length; i++) {
+             for (let j = 0; j < maze.length; j++) {
+                if (maze[i][j] == 8 && this.life > 0) {
+                    let zombie = new Zombie(this, j * this.size, i * this.size,)
+                    this.zombies.push(zombie);
+                    this.maze[this.lv][i][j] = zombie;
+                }
+            }
+        }
+
         }
     }
 
@@ -128,7 +170,7 @@ class Game{
             this.sword = true;
         }
         else if(find == 3 ){
-            this.bombe = true
+            this.bomb = true
         }
         else if(find == 4|| this.items == 3){
             this.keys = true
@@ -138,6 +180,11 @@ class Game{
         }
     }
 
+    dead(){
+        this.ctx.clearRect(0,0,600,600)
+        this.life = this.life - 1;
+        this.play()
+    }
     finishGame(){
         this.finish = false;
         this.ctx.clearRect(0,0,600,600)

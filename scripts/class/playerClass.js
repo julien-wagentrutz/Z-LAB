@@ -7,11 +7,10 @@ class Player {
         this.speed = 500;
         let i = 0
         let find = false;
-        while(i<maze[this.game.lv].length && !find){
+        while(i<this.game.maze[this.game.lv].length && !find){
             let j = 0
-            while(j<maze[this.game.lv].length && !find){
-                if(maze[this.game.lv][i][j] == 9){
-                    maze[this.game.lv][i][j] = 0
+            while(j<this.game.maze[this.game.lv].length && !find){
+                if(this.game.maze[this.game.lv][i][j] == 9){
                     this.posX = j * this.game.size
                     this.posY = i * this.game.size
                     find = true
@@ -33,8 +32,12 @@ class Player {
         road.src = 'images/sprites/images_level_'+this.game.lv+'/floor'+this.game.lv+'.png';
         let wall = new Image()
         wall.src = 'images/sprites/images_level_'+this.game.lv+'/wall'+this.game.lv+'.png';
-        let ball = new Image()
-        ball.src = 'images/sprites/ball.png';
+        let bomb = new Image()
+        bomb.src = 'images/sprites/images_level_'+this.game.lv+'/bomb'+this.game.lv+'.png';
+        let door = new Image()
+        door.src = 'images/sprites/images_level_'+this.game.lv+'/door'+this.game.lv+'.png';
+        let broken = new Image()
+        broken.src = 'images/sprites/images_level_'+this.game.lv+'/brokenWall'+this.game.lv+'.png';
 
 
         let newDir;
@@ -62,16 +65,31 @@ class Player {
             newDir = dir;
             newImage = 'images/sprites/images_level_'+this.game.lv+'/figure'+this.game.lv+'-down.png'
         }
-        else if(dir == ' ' && this.game.bombe){
+        else if(dir == ' ' && this.game.bomb){
             this.putBombe()
         }
         else if(dir == 'Shift' && this.game.sword){
+            if(this.dir == 'ArrowLeft'){
+                newImage = 'images/sprites/images_level_'+this.game.lv+'/fight'+this.game.lv+'-left.png'
+            }
+            else if(this.dir == 'ArrowRight'){
+
+                newImage = 'images/sprites/images_level_'+this.game.lv+'/fight'+this.game.lv+'-right.png'
+            }
+            else if(this.dir == 'ArrowUp'){
+                newImage = 'images/sprites/images_level_'+this.game.lv+'/fight'+this.game.lv+'-up.png'
+            }
+            else if(this.dir == 'ArrowDown'){
+                newImage = 'images/sprites/images_level_'+this.game.lv+'/fight'+this.game.lv+'-down.png'
+            }
             this.fight()
         }
 
 
         if(dir != ' ' || dir !='Shift') {
-            if (maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 0) {
+            this.game.maze[this.game.lv][this.posY / this.game.size][this.posX / this.game.size] = 0
+            if (this.game.maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 0) {
+                this.game.maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] = 9
                 this.drawMove(newImage, newDir, newPosX, newPosY, road)
                 if (this.game.mode == 1) {
                     this.game.ctx.clearRect(0, 0, 600, 600)// A supp
@@ -81,59 +99,89 @@ class Player {
                     let nb = true;
                     for (let i = 0; i < 4; i++) {
                         if (nb) {
-                            if (maze[this.game.lv][coordY + 1][coordX] == 0) {
+                            if (this.game.maze[this.game.lv][coordY + 1][coordX] == 0) {
                                 this.game.ctx.drawImage(road, this.posX, this.posY + this.game.size, this.game.size, this.game.size)
                             }
-                            else if (maze[this.game.lv][coordY + 1][coordX] == 1) {
+                            else if (this.game.maze[this.game.lv][coordY + 1][coordX] == 1) {
                                 this.game.ctx.drawImage(wall, this.posX, this.posY + this.game.size, this.game.size, this.game.size)
                             }
-                            else if (maze[this.game.lv][coordY + 1][coordX] == 3) {
-                                this.game.ctx.drawImage(ball, this.posX, this.posY + this.game.size, this.game.size, this.game.size)
+                            else if (this.game.maze[this.game.lv][coordY + 1][coordX] == 3) {
+                                this.game.ctx.drawImage(bomb, this.posX, this.posY + this.game.size, this.game.size, this.game.size)
                             }
-                            if (maze[this.game.lv][coordY][coordX + 1] == 0) {
+                            else if (this.game.maze[this.game.lv][coordY + 1][coordX] == 5) {
+                                this.game.ctx.drawImage(door, this.posX, this.posY + this.game.size, this.game.size, this.game.size)
+                            }
+                            else if (this.game.maze[this.game.lv][coordY + 1][coordX] == 6) {
+                                this.game.ctx.drawImage(broken, this.posX, this.posY + this.game.size, this.game.size, this.game.size)
+                            }
+                            if (this.game.maze[this.game.lv][coordY][coordX + 1] == 0) {
                                 this.game.ctx.drawImage(road, this.posX + this.game.size, this.posY, this.game.size, this.game.size)
                             }
-                            else if (maze[this.game.lv][coordY][coordX + 1] == 1) {
+                            else if (this.game.maze[this.game.lv][coordY][coordX + 1] == 1) {
                                 this.game.ctx.drawImage(wall, this.posX + this.game.size, this.posY, this.game.size, this.game.size)
                             }
-                            else if (maze[this.game.lv][coordY][coordX + 1] == 3) {
-                                this.game.ctx.drawImage(ball, this.posX + this.game.size, this.posY, this.game.size, this.game.size)
+                            else if (this.game.maze[this.game.lv][coordY][coordX + 1] == 3) {
+                                this.game.ctx.drawImage(bomb, this.posX + this.game.size, this.posY, this.game.size, this.game.size)
+                            }
+                            else if (this.game.maze[this.game.lv][coordY][coordX + 1] == 5) {
+                                this.game.ctx.drawImage(door, this.posX + this.game.size, this.posY, this.game.size, this.game.size)
+                            }
+                            else if (this.game.maze[this.game.lv][coordY][coordX + 1] == 6) {
+                                this.game.ctx.drawImage(broken, this.posX + this.game.size, this.posY, this.game.size, this.game.size)
                             }
                         }
                         else {
-                            if (maze[this.game.lv][coordY - 1][coordX] == 0) {
+                            if (this.game.maze[this.game.lv][coordY - 1][coordX] == 0) {
                                 this.game.ctx.drawImage(road, this.posX, this.posY - this.game.size, this.game.size, this.game.size)
                             }
-                            else if (maze[this.game.lv][coordY - 1][coordX] == 1) {
+                            else if (this.game.maze[this.game.lv][coordY - 1][coordX] == 1) {
                                 this.game.ctx.drawImage(wall, this.posX, this.posY - this.game.size, this.game.size, this.game.size)
                             }
-                            else if (maze[this.game.lv][coordY - 1][coordX] == 3) {
-                                this.game.ctx.drawImage(ball, this.posX, this.posY - this.game.size, this.game.size, this.game.size)
+                            else if (this.game.maze[this.game.lv][coordY - 1][coordX] == 3) {
+                                this.game.ctx.drawImage(bomb, this.posX, this.posY - this.game.size, this.game.size, this.game.size)
                             }
-                            if (maze[this.game.lv][coordY][coordX - 1] == 0) {
+                            else if (this.game.maze[this.game.lv][coordY - 1][coordX] == 5) {
+                                this.game.ctx.drawImage(door, this.posX, this.posY - this.game.size, this.game.size, this.game.size)
+                            }
+                            else if (this.game.maze[this.game.lv][coordY - 1][coordX] == 6) {
+                                this.game.ctx.drawImage(broken, this.posX, this.posY - this.game.size, this.game.size, this.game.size)
+                            }
+                            if (this.game.maze[this.game.lv][coordY][coordX - 1] == 0) {
                                 this.game.ctx.drawImage(road, this.posX - this.game.size, this.posY, this.game.size, this.game.size)
                             }
-                            else if (maze[this.game.lv][coordY][coordX - 1] == 1) {
+                            else if (this.game.maze[this.game.lv][coordY][coordX - 1] == 1) {
                                 this.game.ctx.drawImage(wall, this.posX - this.game.size, this.posY, this.game.size, this.game.size)
                             }
-                            else if (maze[this.game.lv][coordY][coordX - 1] == 3) {
-                                this.game.ctx.drawImage(ball, this.posX - this.game.size, this.posY, this.game.size, this.game.size)
+                            else if (this.game.maze[this.game.lv][coordY][coordX - 1] == 3) {
+                                this.game.ctx.drawImage(bomb, this.posX - this.game.size, this.posY, this.game.size, this.game.size)
+                            }
+                            else if (this.game.maze[this.game.lv][coordY][coordX - 1] == 5) {
+                                this.game.ctx.drawImage(door, this.posX - this.game.size, this.posY, this.game.size, this.game.size)
+                            }
+                            else if (this.game.maze[this.game.lv][coordY][coordX - 1] == 6) {
+                                this.game.ctx.drawImage(broken, this.posX - this.game.size, this.posY, this.game.size, this.game.size)
                             }
                         }
                         nb = !nb
                     }
                 }
             }
-            else if (maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 2 || maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 3 || maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 4) {
-                let find = maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size]
+            else if (this.game.maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 2 || this.game.maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 3 || this.game.maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 4) {
+                let find = this.game.maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size]
                 this.drawMove(newImage, dir, newPosX, newPosY, road)
-                maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] = 0
+                this.game.maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] = 0
                 this.game.itemFind(this, find)
             }
-            else if (maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 5 && this.game.keys) {
-                this.game.drawGrid(maze[this.game.lv])
+            else if (this.game.maze[this.game.lv][newPosY / this.game.size][newPosX / this.game.size] == 5 && this.game.keys) {
+                this.game.drawGrid(this.game.maze[this.game.lv])
                 this.game.finishGame();
             }
+            else if(dir != 'Shift'){
+                this.image.src =  newImage;
+                this.dir = newDir
+                this.game.ctx.drawImage(this.image, this.posX, this.posY, this.game.size, this.game.size)
+            }
+
         }
     }
 
@@ -149,125 +197,132 @@ class Player {
 
 
     putBombe(){
-
-        let ball = new Image()
-        ball.src = 'images/sprites/ball.png';
         let road = new Image();
         road.src = 'images/sprites/images_level_'+this.game.lv+'/floor'+this.game.lv+'.png';
         let player = this
-        let posX = this.posX;
-        let posY = this.posY;
-        let dir = this.dir;
-
+        let posX;
+        let posY;
+        let dir = player.dir;
+        let put = false;
         if(this.dir == 'ArrowLeft'){
-           if(maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)-1] == 0)
+           if(this.game.maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)-1] == 0)
            {
-               maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)-1] = 7
+               this.game.maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)-1] = 7
                let block = new Block(this.game.size,7,  this.posX-this.game.size,this.posY,this.game.lv)
                this.game.drawBlock(block)
-                posX -= this.game.size
-
+                posX = this.posX - this.game.size;
+                posY = this.posY;
+                put = true;
            }
         }
         else if(this.dir == 'ArrowRight'){
-            if(maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)+1] == 0)
+            if(this.game.maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)+1] == 0)
             {
-                maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)+1] = 7
+                this.game.maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)+1] = 7
                 let block = new Block(this.game.size,7,  this.posX+this.game.size,this.posY,this.game.lv)
                 this.game.drawBlock(block)
-                posX += this.game.size
+                posX = this.posX + this.game.size
+                posY = this.posY;
+                put = true;
             }
         }
         else if(this.dir == 'ArrowUp'){
-            if(maze[this.game.lv][(this.posY/this.game.size)-1][(this.posX/this.game.size)] == 0)
+            if(this.game.maze[this.game.lv][(this.posY/this.game.size)-1][(this.posX/this.game.size)] == 0)
             {
-                maze[this.game.lv][(this.posY/this.game.size)-1][(this.posX/this.game.size)] = 7
+                this.game.maze[this.game.lv][(this.posY/this.game.size)-1][(this.posX/this.game.size)] = 7
                 let block = new Block(this.game.size,7,  this.posX,this.posY-this.game.size,this.game.lv)
                 this.game.drawBlock(block)
-                posY -= this.game.size
+                posY = this.posY - this.game.size
+                posX = this.posX;
+                put = true
             }
         }
         else if(this.dir == 'ArrowDown'){
-            if(maze[this.game.lv][(this.posY/this.game.size)+1][(this.posX/this.game.size)] == 0)
+            if(this.game.maze[this.game.lv][(this.posY/this.game.size)+1][(this.posX/this.game.size)] == 0)
             {
-                maze[this.game.lv][(this.posY/this.game.size)+1][(this.posX/this.game.size)] = 7
+                this.game.maze[this.game.lv][(this.posY/this.game.size)+1][(this.posX/this.game.size)] = 7
                 let block = new Block(this.game.size,7,  this.posX,this.posY+this.game.size,this.game.lv)
                 this.game.drawBlock(block)
-                posY += this.game.size
-
+                posY = this.posY + this.game.size
+                posX = this.posX;
+                put = true;
             }
         }
+        if(put){
+            let interval = setTimeout(function(){
+                player.explose(player,posX,posY,dir)
+            },1500)
 
-        let interval = setTimeout(function(){
-            player.explose(player,posX,posY,dir)
-        },1500)
+        }
 
     }
 
     explose(player,posX,posY,dir){
-        if(maze[player.game.lv][posY/player.game.size][(posX/player.game.size)+1] == 6){
-            maze[player.game.lv][posY/player.game.size][(posX/player.game.size)+1] = 0
+        if(this.game.maze[player.game.lv][posY/player.game.size][(posX/player.game.size)+1] == 6){
+            this.game.maze[player.game.lv][posY/player.game.size][(posX/player.game.size)+1] = 0
             let block = new Block(player.game.size,1,posX+player.game.size, posY,player.game.lv)
             player.game.drawBlock(block)
         }
-        else if(maze[player.game.lv][posY/player.game.size][(posX/player.game.size)-1] == 6 ){
-            maze[player.game.lv][posY/player.game.size][(posX/player.game.size)-1] = 0
+        else if(this.game.maze[player.game.lv][posY/player.game.size][(posX/player.game.size)-1] == 6 ){
+            this.game.maze[player.game.lv][posY/player.game.size][(posX/player.game.size)-1] = 0
             let block = new Block(player.game.size,1,posX-player.game.size, posY,player.game.lv)
             player.game.drawBlock(block)
         }
-        else if(maze[player.game.lv][(posY/player.game.size)+1][(posX/player.game.size)] == 6 ){
-             maze[player.game.lv][(posY/player.game.size)+1][(posX/player.game.size)] = 0
+        else if(this.game.maze[player.game.lv][(posY/player.game.size)+1][(posX/player.game.size)] == 6 ){
+            this.game.maze[player.game.lv][(posY/player.game.size)+1][(posX/player.game.size)] = 0
             let block = new Block(player.game.size,1,posX, posY+player.game.size,player.game.lv)
             player.game.drawBlock(block)
         }
-        else if(maze[player.game.lv][(posY/player.game.size)-1][(posX/player.game.size)] == 6){
-             maze[player.game.lv][(posY/player.game.size)-1][(posX/player.game.size)] = 0
+        else if(this.game.maze[player.game.lv][(posY/player.game.size)-1][(posX/player.game.size)] == 6){
+            this.game.maze[player.game.lv][(posY/player.game.size)-1][(posX/player.game.size)] = 0
             let block = new Block(player.game.size,1,posX, posY-player.game.size,player.game.lv)
             player.game.drawBlock(block)
         }
-        maze[player.game.lv][(posY/player.game.size)][(posX/player.game.size)] = 0
+        this.game.maze[player.game.lv][(posY/player.game.size)][(posX/player.game.size)] = 0
         let block = new Block(player.game.size,1,posX, posY,player.game.lv)
         player.game.drawBlock(block)
 
     }
 
     fight(){
+
         if(this.dir == 'ArrowLeft'){
-            if(maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)-1].isEnnemi ){
-                clearInterval(maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)-1].int)
-                this.game.zombies = arrayRemove(this.game.zombies, maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)-1])
+            if(this.game.maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)-1].isEnnemi ){
+                clearInterval(this.game.maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)-1].int)
+                this.game.zombies = arrayRemove(this.game.zombies, this.game.maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)-1])
                 let block = new Block(this.game.size,1,this.posX-this.game.size, this.posY,this.game.lv)
                 this.game.drawBlock(block)
-                maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)-1] = 0
+                this.game.maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)-1] = 0
             }
         }
         else if(this.dir == 'ArrowRight'){
-            if(maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)+1].isEnnemi ){
-                clearInterval(maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)+1].int)
-                this.game.zombies = arrayRemove(this.game.zombies, maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)+1])
+            if(this.game.maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)+1].isEnnemi ){
+                clearInterval(this.game.maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)+1].int)
+                this.game.zombies = arrayRemove(this.game.zombies, this.game.maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)+1])
                 let block = new Block(this.game.size,1,this.posX+this.game.size, this.posY,this.game.lv)
                 this.game.drawBlock(block)
-                maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)+1] = 0
+                this.game.maze[this.game.lv][this.posY/this.game.size][(this.posX/this.game.size)+1] = 0
             }
         }
         else if(this.dir == 'ArrowUp'){
-            if(maze[this.game.lv][(this.posY/this.game.size)-1][(this.posX/this.game.size)].isEnnemi ){
-                clearInterval(maze[this.game.lv][(this.posY/this.game.size)-1][(this.posX/this.game.size)].int)
-                this.game.zombies = arrayRemove(this.game.zombies, maze[this.game.lv][(this.posY/this.game.size)-1][(this.posX/this.game.size)])
+            if(this.game.maze[this.game.lv][(this.posY/this.game.size)-1][(this.posX/this.game.size)].isEnnemi ){
+                clearInterval(this.game.maze[this.game.lv][(this.posY/this.game.size)-1][(this.posX/this.game.size)].int)
+                this.game.zombies = arrayRemove(this.game.zombies, this.game.maze[this.game.lv][(this.posY/this.game.size)-1][(this.posX/this.game.size)])
                 let block = new Block(this.game.size,1,this.posX, this.posY-this.game.size,this.game.lv)
                 this.game.drawBlock(block)
-                maze[this.game.lv][(this.posY/this.game.size)-1][(this.posX/this.game.size)]= 0
+                this.game.maze[this.game.lv][(this.posY/this.game.size)-1][(this.posX/this.game.size)]= 0
             }
         }
         else if(this.dir == 'ArrowDown'){
-            if(maze[this.game.lv][(this.posY/this.game.size)+1][(this.posX/this.game.size)].isEnnemi ){
-                clearInterval(maze[this.game.lv][(this.posY/this.game.size)+1][(this.posX/this.game.size)].int)
-                this.game.zombies = arrayRemove(this.game.zombies, maze[this.game.lv][(this.posY/this.game.size)+1][(this.posX/this.game.size)])
+            if(this.game.maze[this.game.lv][(this.posY/this.game.size)+1][(this.posX/this.game.size)].isEnnemi ){
+                clearInterval(this.game.maze[this.game.lv][(this.posY/this.game.size)+1][(this.posX/this.game.size)].int)
+                this.game.zombies = arrayRemove(this.game.zombies,this.game.maze[this.game.lv][(this.posY/this.game.size)+1][(this.posX/this.game.size)])
                 let block = new Block(this.game.size,1,this.posX, this.posY + this.game.size,this.game.lv)
                 this.game.drawBlock(block)
-                maze[this.game.lv][(this.posY/this.game.size)+1][(this.posX/this.game.size)] = 0
+                this.game.maze[this.game.lv][(this.posY/this.game.size)+1][(this.posX/this.game.size)] = 0
             }
         }
+
     }
 
 }
