@@ -19,10 +19,20 @@ buttonStart.addEventListener(
   function(){
     buttonStart.style.opacity="0"
     game.play()
-    for(let i = 0; i<10; i++){
-      musiqueJeu.play()
-    }
     screenStart.style.display="none"
+    musiqueJeu.play()
+    window.setTimeout(() =>
+    {
+        musiqueJeu.play()
+    }, 87000)
+    window.setTimeout(() =>
+    {
+        musiqueJeu.play()
+    }, 87000)
+    window.setTimeout(() =>
+    {
+        musiqueJeu.play()
+    }, 87000)
   }
 )
 
