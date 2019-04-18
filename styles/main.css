@@ -34,15 +34,48 @@ audio{
   display: flex;
   justify-content: center;
   text-align: center;
-  padding-top: 20px;
+
   margin-bottom: 30px;
 }
 
 #logo{
-  width: 50%;
+  width: 40%;
   height: auto;
   margin: 0 auto;
 }
+
+.howToPlayPop{
+  width : 16%;
+  height : 60px;
+
+  position: fixed;
+  left : 100%;
+  top : 10%;
+  background-color: red;
+  border-radius: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+
+.howToPlayPop a{
+  text-decoration: none;
+  color : white;
+  font-size: 24px;
+}
+
+.howToPlayPop a:hover{
+  text-decoration : underline;
+}
+
+
+.howToPlayPop img{
+  width : 30px;
+  height: 30px;
+}
+
+
 
 /* HAMBURGER */
 
@@ -212,6 +245,7 @@ h3{
 
 
 .divHowToPlay{
+  opacity: 0;
   display: flex;
   justify-content: center;
   padding-top : 40px;
@@ -227,9 +261,6 @@ h3{
   color : grey;
 }
 
-.hidden{
-  display : none;
-}
 
 
 @media screen and (max-width : 990px){

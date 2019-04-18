@@ -11,14 +11,18 @@ const slider = document.querySelector(".slider")
 const sliderContainer = document.querySelector(".sliderContainer")
 const sliderImg = document.querySelectorAll(".sliderImg")
 const musiqueAccueil = document.querySelector("#musiqueAccueil")
-const howToPlayButton = document.querySelector(".howToPlayButton")
+const divHowToPlay = document.querySelector(".divHowToPlay")
 const levelChoiceTxt = document.querySelector(".levelChoice h4")
+const howToPlayPop = document.querySelector(".howToPlayPop")
+const croixHowToPlay = document.querySelector(".howToPlayPop img")
 
-let musicPlayed = false//pour savoir si la musique d'accueil a déjà été jouée
 
-// OUVERTURE DEBUT
+let musicPlayed = false//to know if the music has already been played
 
-button.addEventListener( //BOUTON DE LA PREMIERE PAGE
+
+// Opening
+
+button.addEventListener( //First Page Button
   "click",
   function(){
     slider.style.opacity="1"
@@ -27,7 +31,7 @@ button.addEventListener( //BOUTON DE LA PREMIERE PAGE
     firstMenu.style.opacity="0"
     firstMenu.style.transition="all 1s"
     if(musicPlayed==false){
-      musiqueAccueil.play()//elle ne sera jouée qu'une fois
+      musiqueAccueil.play()
     }
     musicPlayed=true
 
@@ -40,8 +44,11 @@ button.addEventListener( //BOUTON DE LA PREMIERE PAGE
     buttonText.style.fontSize="40px"
     buttonText.style.transition="all 1s"
 
-    howToPlayButton.classList.remove('hidden')
+
     buttonText.innerText="Jouer"
+    divHowToPlay.style.opacity="1"
+    howToPlayPop.style.transform="translateX(-90%)"
+    howToPlayPop.style.transition="all 3s"
     button.addEventListener(
       "click",
       function(){
@@ -51,6 +58,12 @@ button.addEventListener( //BOUTON DE LA PREMIERE PAGE
   },false
 )
 
+croixHowToPlay.addEventListener(
+  "click",
+  function(){
+    howToPlayPop.style.transform="translateX(10%)"
+  }
+)
 
 
 
@@ -75,7 +88,7 @@ blackHamburger.addEventListener(
 
 // SLIDER
 
-  let nbImage = 0 //Pour savoir à quelle image on est
+  let nbImage = 0
 
   for(let i = 0; i<sliderImg.length; i++){
     sliderImg[i].addEventListener(
