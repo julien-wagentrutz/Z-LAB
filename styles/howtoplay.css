@@ -4,16 +4,7 @@ body{
   font-size: 16px;
   color : white;
   background-color: black;
-}
-
-@font-face {
-	font-family: "Morris Roman";
-	src: url('fonts/morris-roman.black.ttf');
-}
-
-@font-face {
-	font-family: "Army Rust";
-	src: url('fonts/ARMY RUST 2.ttf');
+  font-family: 'VT323', monospace;
 }
 
 /* HEADER */
@@ -78,7 +69,6 @@ body{
 .menuHamburgerOnglets ul li a{
   color : black;
   text-decoration: none;
-  font-family: "Morris Roman";
   font-size: 24px;
 }
 
@@ -90,7 +80,6 @@ body{
 /*MAIN*/
 
 .howToPlay h1{
-  font-family: "Army Rust";
   font-size : 60px;
   text-align: center;
   width : 100%;
@@ -100,13 +89,11 @@ body{
 }
 
 .howToPlay h3{
-  font-family: "Morris Roman";
   font-size : 34px;
   text-align: center;
 }
 
 #gameGoal{
-  font-family: "Morris Roman";
   font-size : 28px;
   text-align: center;
   margin : 0px 20%;
@@ -123,7 +110,6 @@ body{
 }
 
 .how p{
-  font-family: "Morris Roman";
   font-size : 22px;
   text-align: center;
 }
@@ -169,7 +155,6 @@ body{
   color : white;
   text-decoration: none;
   font-size: 50px;
-  font-family: "Army rust";
 }
 
 .triangle{

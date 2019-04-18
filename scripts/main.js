@@ -11,8 +11,8 @@ const slider = document.querySelector(".slider")
 const sliderContainer = document.querySelector(".sliderContainer")
 const sliderImg = document.querySelectorAll(".sliderImg")
 const musiqueAccueil = document.querySelector("#musiqueAccueil")
-const howToPlayButton = document.querySelector('.divHowToPlay')
-
+const howToPlayButton = document.querySelector(".howToPlayButton")
+const levelChoiceTxt = document.querySelector(".levelChoice h4")
 
 let musicPlayed = false//pour savoir si la musique d'accueil a déjà été jouée
 
@@ -85,18 +85,19 @@ blackHamburger.addEventListener(
         sliderImg[0].classList.remove("currentImg")
         sliderImg[1].classList.add("currentImg")
         sliderContainer.style.transform="translateX(-30%)"
+        levelChoiceTxt.innerText="Niveau 2"
         }
         if(nbImage==1){
           sliderImg[1].classList.remove("currentImg")
           sliderImg[2].classList.add("currentImg")
           sliderContainer.style.transform="translateX(-60%)"
-
+          levelChoiceTxt.innerText="Niveau 3"
            }
         if(nbImage==2){
           sliderImg[2].classList.remove("currentImg")
           sliderImg[0].classList.add("currentImg")
           sliderContainer.style.transform="translateX(0px)"//fait repartie le slider à 0
-
+          levelChoiceTxt.innerText="Niveau 1"
         }
         if(nbImage<2){
           nbImage++

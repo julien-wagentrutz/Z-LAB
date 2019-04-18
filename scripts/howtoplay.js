@@ -25,7 +25,7 @@ blackHamburger.addEventListener(
   }
 )
 
-// TRIANGLE DEROULANT
+// drop-down menu
 
 let displayNone = true
 
